@@ -1,0 +1,5 @@
+node_modules/
+temp/
+project/homebrew.sublime-workspace
+typings/
+www/js/bundle.js

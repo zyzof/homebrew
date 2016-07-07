@@ -1,0 +1,27 @@
+{
+  "name": "homebrew",
+  "version": "1.0.0",
+  "description": "",
+  "main": "www/app.js",
+  "scripts": {
+    "build": "tsc -p ./src",
+    "postbuild": "browserify -t [ babelify ] temp/app.js > www/js/bundle.js",
+    "serve": "http-server ./www -o -c-1",
+    "lint": "tslint -o lint.txt src/**/*.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "tsc": "^1.20150623.0"
+  },
+  "dependencies": {
+    "brauhaus-ts": "^0.2.9",
+    "react": "^15.1.0",
+    "react-cardstack": "^0.1.1",
+    "react-dom": "^15.1.0",
+    "react-expandable-listview": "^0.5.1",
+    "react-motion": "^0.4.4"
+  }
+}

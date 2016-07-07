@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outDir": "../temp",
+        "sourceMap": true,
+        "target": "ES6",
+        "jsx": "react"
+    },
+    "files": [
+        "./app.tsx",
+        "../typings/index.d.ts"
+    ]
+}
