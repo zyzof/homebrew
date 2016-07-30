@@ -1,0 +1,47 @@
+#example {
+	position: relative;
+	display: block;
+	margin: auto;
+}
+
+/* CardStack/Card styles */
+
+.expandable-menu {
+	background: #f8f8f8;
+	width: 100%;
+	max-width: 600px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: overlay;
+	margin: auto;
+}
+
+.expandable-menu-item {
+	/*position: absolute;
+	top: 0;
+	height: 50px;
+	cursor: pointer;
+	transition: 0.5s transform ease;
+	-webkit-transition: -webkit-transform 0.5s ease;
+
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;*/
+	height: 50px;
+	overflow: overlay;
+}
+
+.input-screen {
+	/*height: 600px;	/* TODO Don't leave this here and don't lock height */
+	background-color: #f8f8f8;
+	max-width: 600px;
+	height: 500px;
+}
+
+
+
+/*******/

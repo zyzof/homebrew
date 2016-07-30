@@ -1,50 +1,50 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Brauhaus from 'brauhaus-ts';
-let CardStack = require('react-cardstack').CardStack;
-let Card = require('react-cardstack').Card;
 
+import { ExpandableMenu, ExpandableMenuItem } from './ExpandableMenu';
+import { MashIngredients } from './MashIngredients';
 
-export interface HelloProps { compiler: string; framework: string; }
+export interface AppProps { compiler: string; framework: string; }
 
-export class Hello extends React.Component<HelloProps, {}> {
+export class App extends React.Component<AppProps, {}> {
+
+	private toggleMashIngredients(): void {
+		//TODO: make this work, or remove
+	}
+
+	/* TODO
+	 * - onclick of first ExpandableMenuItem displays MashIngredients
+	 * - remove onclick funcs/calls if unused
+	 */
     render() {
     	console.log(Brauhaus);
-        return <CardStack
-		    height={500}
-		    width={400}
-		    background='#f8f8f8'
-		    hoverOffset={25}>
+        return <ExpandableMenu>
 
-		    <Card background='#2980B9'>
-		        <h1>Mash</h1>
-		    </Card>
 
-		    <Card background='#27AE60'>
-		        <h1>Boil</h1>
-		    </Card>
+		    <ExpandableMenuItem headerText={'Mash'} onClick={this.toggleMashIngredients}>
+		    	<MashIngredients />
+		    </ExpandableMenuItem>
 
-		    <Card background='#2980B9'>
-		        <h1>Timers</h1>
-		    </Card>
+		    <ExpandableMenuItem headerText={'Boil'} onClick={this.toggleMashIngredients}/>
 
-		    <Card background='#27AE60'>
-		        <h1>Fermentation</h1>
-		    </Card>
+		    <ExpandableMenuItem headerText={'Timers'} onClick={this.toggleMashIngredients}/>
 
-		    <Card background='#2980B9'>
-		        <h1>Saved Recipes</h1>
-		    </Card>
+		    <ExpandableMenuItem headerText={'Fermentation'} onClick={this.toggleMashIngredients}/>
 
-		    <Card background='#27AE60'>
-		        <h1>Carbonation</h1>
-		    </Card>
+		    <ExpandableMenuItem headerText={'Carbonation'} onClick={this.toggleMashIngredients}/>
 
-		</CardStack>;
+			<MashIngredients />
+
+		</ExpandableMenu>;
+    }
+
+    public showContentForId(id: string) {
+
     }
 }
 
 ReactDOM.render(
-	<Hello compiler="Typescript" framework="React" />,
+	<App compiler="Typescript" framework="React" />,
 	document.getElementById("example")
 );
