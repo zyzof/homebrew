@@ -1,0 +1,546 @@
+[{
+	"name": "Select...",
+	"gravity": "0",
+	"lovibond": "0",
+	"description": ""
+},
+{
+	"name": "Black Barley",
+	"gravity": "1.025",
+	"lovibond": "525",
+	"description": "Imparts dryness. Unmalted; use in porters and dry stouts."
+},
+{
+	"name": "Black Patent Malt",
+	"gravity": "1.026",
+	"lovibond": "500",
+	"description": "Provides color and sharp flavor in stouts and porters."
+},
+{
+	"name": "Chocolate Malt",
+	"gravity": "1.034",
+	"lovibond": "350",
+	"description": "Use in all types to adjust color and add nutty, toasted flavor. Chocolate flavor."
+},
+{
+	"name": "Crystal Malt",
+	"gravity": "1.034",
+	"lovibond": "55",
+	"description": ""
+},
+{
+	"name": "Carapils",
+	"gravity": "1.033",
+	"lovibond": "1.5",
+	"description": "Balances body and flavor without adding color, aids in head retention. For any beer."
+},
+{
+	"name": "Munich Malt",
+	"gravity": "1.034",
+	"lovibond": "10",
+	"description": "Sweet, toasted flavor and aroma. For Oktoberfests and malty styles."
+},
+{
+	"name": "Pale Malt (2-row)",
+	"gravity": "1.0375",
+	"lovibond": "1.8",
+	"description": "Smooth, less grainy, moderate malt flavor. Basic malt for all beer styles."
+},
+{
+	"name": "Pale Malt (6-row)",
+	"gravity": "1.035",
+	"lovibond": "1.8",
+	"description": "Moderate malt flavor. Basic malt for all beer styles."
+},
+{
+	"name": "Roasted Barley",
+	"gravity": "1.025",
+	"lovibond": "300",
+	"description": "Sweet, grainy, coffee flavor and a red to deep brown color. For porters and stouts."
+},
+{
+	"name": "Special Roast",
+	"gravity": "1.035",
+	"lovibond": "50",
+	"description": "Provides a deep golden to brown color for ales. Use in all darker ales."
+},
+{
+	"name": "Victory Malt",
+	"gravity": "1.034",
+	"lovibond": "25",
+	"description": "Provides a deep golden to brown color. Use in nut brown ales, IPAs and Scottish ales."
+},
+{
+	"name": "Vienna Malt",
+	"gravity": "1.035",
+	"lovibond": "3.75",
+	"description": "Increases malty flavor, provides balance. Use in Vienna, Marzen and Oktoberfest."
+},
+{
+	"name": "Wheat Malt",
+	"gravity": "1.038",
+	"lovibond": "2",
+	"description": "Light flavor and creamy head. For American weizenbier, weissbier and dunkelweiss."
+},
+{
+	"name": "White Wheat Malt",
+	"gravity": "1.037",
+	"lovibond": "2",
+	"description": "Imparts a malty flavor. For American wheat beers, wheat bock and doppel bock."
+},
+{
+	"name": "Aromatic Malt",
+	"gravity": "1.036",
+	"lovibond": "23",
+	"description": "Imparts a big malt aroma. Use in brown ales, Belgian dubbels and tripels."
+},
+{
+	"name": "Belgian Pale Ale Malt",
+	"gravity": "1.038",
+	"lovibond": "3.2",
+	"description": "Use as a base malt for any Belgian style beer with full body."
+},
+{
+	"name": "Biscuit Malt",
+	"gravity": "1.035",
+	"lovibond": "24",
+	"description": "Warm baked biscuit flavor and aroma. Increases body. Use in Belgian beers."
+},
+{
+	"name": "Caramel Pils",
+	"gravity": "1.030",
+	"lovibond": "7.5",
+	"description": "A very light crystal malt that lends body, smoother mouth-feel and foam stability."
+},
+{
+	"name": "Caramunich Malt",
+	"gravity": "1.033",
+	"lovibond": "56",
+	"description": "Caramel, full flavor, copper color. For Belgian ales, German smoked and bocks."
+},
+{
+	"name": "Caravienne Malt",
+	"gravity": "1.034",
+	"lovibond": "21.5",
+	"description": "Belgian light crystal malt. Used in lighter Abbey or Trappist style ales."
+},
+{
+	"name": "De-Bittered Black Malt",
+	"gravity": "1.030",
+	"lovibond": "550",
+	"description": "Will add a deep black color without the astringent flavor of black malt."
+},
+{
+	"name": "Pale Wheat",
+	"gravity": "1.038",
+	"lovibond": "1.6",
+	"description": "Can be used in amounts of up to 70% of grist to create many wheat beer styles and aid in head retention in smaller amounts."
+},
+{
+	"name": "Pilsen Malt",
+	"gravity": "1.037",
+	"lovibond": "1.5",
+	"description": "Light color, malty flavor. For pilsners, dubbels, tripels, whites and specialty ales."
+},
+{
+	"name": "Roasted Wheat",
+	"gravity": "1.036",
+	"lovibond": "12",
+	"description": "Slightly roasted wheat which imparts a bready, nut-like quality."
+},
+{
+	"name": "Special B Malt",
+	"gravity": "1.030",
+	"lovibond": "175",
+	"description": "Extreme caramel aroma and flavor. For dark Abbey beers and other dark beers."
+},
+{
+	"name": "Amber Malt",
+	"gravity": "1.032",
+	"lovibond": "60",
+	"description": "Roasted malt used in British milds, old ales, brown ales, nut brown ales."
+},
+{
+	"name": "Brown Malt",
+	"gravity": "1.032",
+	"lovibond": "65",
+	"description": "Dry, burnt, chalky character. Use in porters, stouts, brown ales and dark lagers."
+},
+{
+	"name": "Carapils Dextrin",
+	"gravity": "1.033",
+	"lovibond": "12",
+	"description": "Adds body; aids head retention. For porters, stouts and heavier bodied beers."
+},
+{
+	"name": "Caramalt",
+	"gravity": "0",
+	"lovibond": "175",
+	"description": "Made from green malt, imparts a red hue and contributes to flavor and foam stability."
+},
+{
+	"name": "Dark Crystal Malt",
+	"gravity": "1.034",
+	"lovibond": "168",
+	"description": "Sweet caramel flavor, mouthfeel. For porters, stouts, old ales and any dark ale."
+},
+{
+	"name": "Lager Malt",
+	"gravity": "1.038",
+	"lovibond": "1.6",
+	"description": "Used to make light colored and flavored lagers."
+},
+{
+	"name": "Maris Otter Pale Malt",
+	"gravity": "1.038",
+	"lovibond": "3",
+	"description": "Premium base malt for any beer. Good for pale ales."
+},
+{
+	"name": "Mild Ale Malt",
+	"gravity": "1.037",
+	"lovibond": "2.5",
+	"description": "Dry, nutty malty flavor. Promotes body. Use in English mild ales."
+},
+{
+	"name": "Oat Malt",
+	"gravity": "1.034",
+	"lovibond": "4",
+	"description": "Enhances body and flavor. For winter beers, stouts, porters and other robust beers."
+},
+{
+	"name": "Pale Ale",
+	"gravity": "1.038",
+	"lovibond": "2.2",
+	"description": "Moderate malt flavor. Used to produce traditional English and Scottish style ales."
+},
+{
+	"name": "Pale Chocolate Malt",
+	"gravity": "1.034",
+	"lovibond": "215",
+	"description": "Less roasted than regular chocolate malt, adds color and mild chocolate/coffee flavors to porters, milds and stouts."
+},
+{
+	"name": "Peat Smoked Malt",
+	"gravity": "1.034",
+	"lovibond": "2.8",
+	"description": "Imparts a robust smoky flavor and aroma. For Scottish ales and wee heavies."
+},
+{
+	"name": "Toasted Pale Malt",
+	"gravity": "1.038",
+	"lovibond": "25",
+	"description": "Imparts nutty flavor and aroma. Use in IPAs and Scottish ales."
+},
+{
+	"name": "Torrified Wheat",
+	"gravity": "1.036",
+	"lovibond": "1.25",
+	"description": "Puffed wheat created by high heat. Use in pale ales, bitters and milds."
+},
+{
+	"name": "Acidulated (Sauer) Malt",
+	"gravity": "1.033",
+	"lovibond": "2.25",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Cara Wheat Malt (r)",
+	"gravity": "1.035",
+	"lovibond": "45.5",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "CaraAmber Malt (r)",
+	"gravity": "1.033",
+	"lovibond": "27",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "CaraAroma Malt (r)",
+	"gravity": "1.034",
+	"lovibond": "150",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Carafa I (r)",
+	"gravity": "1.038",
+	"lovibond": "320",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Carafa II",
+	"gravity": "1.038",
+	"lovibond": "410",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Carafa III",
+	"gravity": "1.038",
+	"lovibond": "525",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "CaraFoam",
+	"gravity": "1.033",
+	"lovibond": "1.8",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "CaraHell",
+	"gravity": "1.034",
+	"lovibond": "10",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "CaraMunich Malt I (R)",
+	"gravity": "1.034",
+	"lovibond": "34",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "CaraMunich Malt II (R)",
+	"gravity": "1.034",
+	"lovibond": "46",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "CaraMunich III",
+	"gravity": "1.034",
+	"lovibond": "56.5",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "CaraRed",
+	"gravity": "1.033",
+	"lovibond": "17.5",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Chocolate Rye Malt",
+	"gravity": "1.030",
+	"lovibond": "245",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Chocolate Wheat Malt",
+	"gravity": "1.038",
+	"lovibond": "415",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Dark Munich Malt",
+	"gravity": "1.034",
+	"lovibond": "9",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Kolsch Malt",
+	"gravity": "1.034",
+	"lovibond": "4.5",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Light Munich Malt",
+	"gravity": "1.034",
+	"lovibond": "5.5",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Melanoidin Malt",
+	"gravity": "1.033",
+	"lovibond": "27",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Rauch Smoked Malt",
+	"gravity": "1.037",
+	"lovibond": "3",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Rye Malt",
+	"gravity": "1.029",
+	"lovibond": "3.5",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Dark Wheat Malt",
+	"gravity": "1.039",
+	"lovibond": "7",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Light Wheat Malt",
+	"gravity": "1.039",
+	"lovibond": "1.75",
+	"description": "Light flavor, creamy head. For wheat beers, stouts, doppelbocks and alt beers."
+},
+{
+	"name": "Flaked Barley",
+	"gravity": "1.032",
+	"lovibond": "1.5",
+	"description": ""
+},
+{
+	"name": "Flaked Maize",
+	"gravity": "1.037",
+	"lovibond": "1",
+	"description": ""
+},
+{
+	"name": "Flaked Oats",
+	"gravity": "1.033",
+	"lovibond": "1",
+	"description": ""
+},
+{
+	"name": "Flaked Rye",
+	"gravity": "1.036",
+	"lovibond": "2",
+	"description": ""
+},
+{
+	"name": "Flaked Wheat",
+	"gravity": "1.036",
+	"lovibond": "2",
+	"description": ""
+},
+{
+	"name": "Franco-Belges Kiln Coffee Malt",
+	"gravity": "0",
+	"lovibond": "165",
+	"description": ""
+},
+{
+	"name": "Gambrinus Honey Malt",
+	"gravity": "1.034",
+	"lovibond": "25",
+	"description": ""
+},
+{
+	"name": "Grits",
+	"gravity": "1.037",
+	"lovibond": "1.25",
+	"description": ""
+},
+{
+	"name": "Irish Moss",
+	"gravity": "0",
+	"lovibond": "0",
+	"description": ""
+},
+{
+	"name": "Malto Dextrin",
+	"gravity": "1.043",
+	"lovibond": "0",
+	"description": ""
+},
+{
+	"name": "Oak Chips",
+	"gravity": "0",
+	"lovibond": "0",
+	"description": ""
+},
+{
+	"name": "Scotmalt Golden Promise",
+	"gravity": "1.038",
+	"lovibond": "2.4",
+	"description": ""
+},
+{
+	"name": "Belgian Candi Sugar (clear)",
+	"gravity": "1.036",
+	"lovibond": "0.5",
+	"description": ""
+},
+{
+	"name": "Brown Sugar",
+	"gravity": "1.046",
+	"lovibond": "40",
+	"description": ""
+},
+{
+	"name": "Candi Sugar (amber)",
+	"gravity": "1.036",
+	"lovibond": "75",
+	"description": ""
+},
+{
+	"name": "Candi Sugar (dark)",
+	"gravity": "1.036",
+	"lovibond": "275",
+	"description": ""
+},
+{
+	"name": "Corn Sugar",
+	"gravity": "1.037",
+	"lovibond": "1",
+	"description": ""
+},
+{
+	"name": "Dark Brown Sugar",
+	"gravity": "1.046",
+	"lovibond": "60",
+	"description": ""
+},
+{
+	"name": "Demerara Sugar",
+	"gravity": "1.0415",
+	"lovibond": "1",
+	"description": ""
+},
+{
+	"name": "Dextrose (glucose)",
+	"gravity": "1.037",
+	"lovibond": "1",
+	"description": ""
+},
+{
+	"name": "Dry Malt Extract",
+	"gravity": "1.044",
+	"lovibond": "10",
+	"description": ""
+},
+{
+	"name": "Honey",
+	"gravity": "1.032",
+	"lovibond": "0",
+	"description": ""
+},
+{
+	"name": "Invert Sugar",
+	"gravity": "1.046",
+	"lovibond": "0",
+	"description": ""
+},
+{
+	"name": "Lactose",
+	"gravity": "0",
+	"lovibond": "0",
+	"description": ""
+},
+{
+	"name": "Maple Syrup",
+	"gravity": "1.030",
+	"lovibond": "35",
+	"description": ""
+},
+{
+	"name": "Molasses",
+	"gravity": "1.036",
+	"lovibond": "80",
+	"description": ""
+},
+{
+	"name": "Sucrose",
+	"gravity": "1.046",
+	"lovibond": "0",
+	"description": ""
+},
+{
+	"name": "Treacle",
+	"gravity": "1.036",
+	"lovibond": "100",
+	"description": ""
+}]

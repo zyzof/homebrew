@@ -18,11 +18,9 @@ export class ExpandableMenu extends React.Component<ExpandableMenuProps, {}>{
 	public renderCards(): void {
 	}
 
-
-
 	public render(): JSX.Element {
 		/* TODO
-		 * display content areas in here!!
+		 * display content areas as siblings of item titles in here!!
 		 */
 		return <div className='expandable-menu' onClick={ this.handleItemClick }>
 					{this.props.children}
@@ -50,7 +48,7 @@ export class ExpandableMenuItem extends React.Component<ExpandableMenuItemProps,
 		console.log('menu item clicked');
 		this.state.showContent = !this.state.showContent;
 		this.setState(this.state);
-		this.props.onClick()	//TODO Do I need to pass this.id?
+		this.props.onClick()	//TODO Do I need to pass this.id? Can i remove this entirely?
 	}
 
 	/*private getContentArea(): JSX.Element {

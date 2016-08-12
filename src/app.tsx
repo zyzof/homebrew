@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as Brauhaus from 'brauhaus-ts';
 
 import { ExpandableMenu, ExpandableMenuItem } from './ExpandableMenu';
 import { MashIngredients } from './MashIngredients';
@@ -18,9 +17,7 @@ export class App extends React.Component<AppProps, {}> {
 	 * - remove onclick funcs/calls if unused
 	 */
     render() {
-    	console.log(Brauhaus);
         return <ExpandableMenu>
-
 
 		    <ExpandableMenuItem headerText={'Mash'} onClick={this.toggleMashIngredients}>
 		    	<MashIngredients />

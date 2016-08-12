@@ -35,6 +35,7 @@
 	overflow: overlay;
 }
 
+/* Screen styles */
 .input-screen {
 	/*height: 600px;	/* TODO Don't leave this here and don't lock height */
 	background-color: #f8f8f8;
@@ -43,5 +44,22 @@
 }
 
 
+
+/* Mash screen styles */
+.og {
+	float: left;
+}
+
+.srm {
+	float: right;
+}
+
+.fg {
+	float: left;
+}
+
+.expected-abv {
+	float: left;
+}
 
 /*******/
