@@ -2,8 +2,6 @@ import * as React from 'react';
 import * as Brauhaus from 'brauhaus-ts';
 import * as $ from 'jquery';
 
-//import {List} from 'linqts';
-
 export class Fermentable {
 	public name: string;
 	public gravity: number;
@@ -25,6 +23,7 @@ export interface MashIngredientState {
 	fermentableOptionElements: JSX.Element[];	//List of elements in selector
 	fermentableSelections: { [name: string]: number };	//name->quantity map
 	fermentables: Fermentable[];	//All possible fermentables. Read from json.
+	fermentableInputElements: JSX.Element[];
 }
 
 class FermentableSelection {
@@ -45,10 +44,12 @@ export class MashIngredients extends React.Component<MashIngredientsProps, MashI
 			srm: 0.0,
 			fermentableOptionElements: [],
 			fermentableSelections: { },
-			fermentables: []
+			fermentables: [],
+			fermentableInputElements: []
 		};
 		
 		this.loadFermentables();
+		this.addIngredientField();
 	}
 
 	private loadFermentables(): void {
@@ -56,8 +57,9 @@ export class MashIngredients extends React.Component<MashIngredientsProps, MashI
 		let json: any = $.getJSON('./fermentables.json', (values) => {
 			let i = 0;
 			for (let fermentable of values) {
+				this.state.fermentables.push(fermentable);
 				this.state.fermentableOptionElements.push(
-					<option>
+					<option key={fermentable.name}>
 						{fermentable.name}
 					</option>
 				);
@@ -104,6 +106,8 @@ export class MashIngredients extends React.Component<MashIngredientsProps, MashI
 				.getElementsByClassName('malt')[0].value;
 
 		this.state.fermentableSelections[malt] = quantity;
+		// TODO increase/decrease quantity based on malt
+		// if there is more than one instance of the malt in the recipe
 
 		this.onStateChange();
 	}
@@ -141,6 +145,26 @@ export class MashIngredients extends React.Component<MashIngredientsProps, MashI
 		return 10.0;
 	}
 
+	private addIngredientField() {
+		let index = this.state.fermentableInputElements.length;
+		this.state.fermentableInputElements.push(
+			<div className='malt-container'>
+				<select className='malt' onChange={this.onFermentableChange.bind(this)} >
+					{this.state.fermentableOptionElements}
+				</select>
+				<input className='malt-quantity' onChange={this.onFermentableQuantityChange.bind(this)} /> (kg)
+				<button onClick={ () => this.removeIngredientFieldAtIndex(index) }>X</button>
+			</div>
+		);
+		this.setState(this.state);
+	}
+
+	private removeIngredientFieldAtIndex(index: number) {
+		this.state.fermentableInputElements.splice(index, 1);
+		this.onStateChange();
+		console.log('remove ingredient field at idx ' + index);
+	}
+
 	public render(): JSX.Element {
 
 		//console.log(fermentableOptionElements);
@@ -161,13 +185,9 @@ export class MashIngredients extends React.Component<MashIngredientsProps, MashI
 				<label for='efficiency'>Efficiency %: </label><input className='efficiency' onChange={ this.onEfficiencyChange.bind(this) } />
 			</div>
 			<br />
-			<div className='malt-container'>
-				<label for='malt'>Fermentables: </label>
-				<select className='malt' onChange={this.onFermentableChange.bind(this)} >
-					{this.state.fermentableOptionElements}
-				</select>
-				<input className='malt-quantity' onChange={this.onFermentableQuantityChange.bind(this)} />(kg)
-			</div>
+			Fermentables:
+			{this.state.fermentableInputElements}
+			<button className='add-ingredient-btn' onClick={this.addIngredientField.bind(this)}>Add Ingredient</button>
 		</div>;
 	}
 };
