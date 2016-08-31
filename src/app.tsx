@@ -47,23 +47,26 @@ export class App extends React.Component<AppProps, AppState> {
 
         return <ExpandableMenu>
 
+			<Mash recipe={this.state.recipe} onRecipeChange={this.onRecipeChange.bind(this)}/>
+
+			<hr />
+			
+			<Boil recipe={this.state.recipe} onRecipeChange={this.onRecipeChange.bind(this)} />
+
+
 		    <ExpandableMenuItem headerText={'Mash'} onClick={this.toggleMashIngredients}>
-		    	<Mash recipe={this.state.recipe} onRecipeChange={this.onRecipeChange.bind(this)}/>
+		    	{ /* TODO <Mash /> here */ }
 		    </ExpandableMenuItem>
 
-		    <ExpandableMenuItem headerText={'Boil'} onClick={this.toggleMashIngredients}/>
+		    <ExpandableMenuItem headerText={'Boil'} onClick={this.toggleMashIngredients}>
+		    	{ /* TODO <Boil /> here */ }
+		    </ExpandableMenuItem>
 
 		    <ExpandableMenuItem headerText={'Timers'} onClick={this.toggleMashIngredients}/>
 
 		    <ExpandableMenuItem headerText={'Fermentation'} onClick={this.toggleMashIngredients}/>
 
 		    <ExpandableMenuItem headerText={'Carbonation'} onClick={this.toggleMashIngredients}/>
-
-			<Boil recipe={this.state.recipe} onRecipeChange={this.onRecipeChange.bind(this)} />
-
-			<hr />
-
-			<Mash recipe={this.state.recipe} onRecipeChange={this.onRecipeChange.bind(this)}/>
 
 		</ExpandableMenu>;
     }

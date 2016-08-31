@@ -2,16 +2,14 @@ import * as React from 'react';
 import { BoilIngredientField } from './BoilIngredientField';
 import * as Brauhaus from 'brauhaus-ts';
 
-interface BoilProps {
+interface Props {
 	onRecipeChange: Function;
 	recipe: any;
-}
+};
 
-interface BoilState {
-	ibu: number;
-	//hops: Hop[];
-	volume: number;
-}
+interface State {
+
+};
 
 interface Hop {
 	id: number;
@@ -20,16 +18,11 @@ interface Hop {
 	durationM: number;
 }
 
-export class Boil extends React.Component<BoilProps, BoilState>{
+export class Boil extends React.Component<Props, State>{
 
-	private nextFieldId: number = 0;
-
-	public constructor(props: BoilProps) {
+	public constructor(props: Props) {
 		super(props);
-		this.state = {
-			ibu: 0,
-			volume: 20
-		};
+		this.state = {};
 
 		this.addIngredientField();	//TODO remove if loading an existing recipe
 	}
@@ -53,7 +46,7 @@ export class Boil extends React.Component<BoilProps, BoilState>{
 			use: '',
 			form: ''
 		}));
-		this.setState(this.state);
+		this.props.onRecipeChange();
 	}
 
 	private removeHopAtIndex(index: number): void {
@@ -75,13 +68,13 @@ export class Boil extends React.Component<BoilProps, BoilState>{
 	}
 
 	public render(): JSX.Element {
-		console.log('Boil.tsx render()');
+		/*console.log('Boil.tsx render()');
 		console.log('recipe hops: ');
-		console.log(this.props.recipe.spices);
+		console.log(this.props.recipe.spices);*/
 		return <div className='input-screen'>
 			<hr />
 
-			<div className='ibu'>IBU: { this.state.ibu }</div>
+			<div className='ibu'>IBU: { this.props.recipe.ibu }</div>
 			<br />
 			<div className='volume'>
 				<label for='volume'>Volume (L): </label>
