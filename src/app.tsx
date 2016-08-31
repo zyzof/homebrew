@@ -26,24 +26,14 @@ export class App extends React.Component<AppProps, AppState> {
 			recipe: recipe
 		};
 		this.state.recipe.add('yeast', { attenuation: 75 });	// Required for ABV calc. TODO allow user-specified fg
-
 	}
 
 	private toggleMashIngredients(): void {
 		//TODO: make this work, or remove
 	}
 
-	private onRecipeChanged(newRecipeData: any): void {
+	private onRecipeChange(): void {
 		console.log('app.tsx onRecipeChange()');
-		// Read volume from Boil.tsx
-		// Read hops from Boil.tsx
-		// Update this.state.recipe
-		//this.state.recipe.batchSize = this.props.children
-		//this.state.recipe = newRecipeData;
-		if (newRecipeData.batchSize) {
-			this.state.recipe.batchSize = newRecipeData.batchSize;
-		}
-
 		this.state.recipe.calculate();
 		this.setState(this.state);
 	}
@@ -54,12 +44,11 @@ export class App extends React.Component<AppProps, AppState> {
 	 */
     render() {
     	console.log('app.tsx render()');
-    	console.log('app.tsx recipe vol: ' + this.state.recipe.batchSize);
-    	let recipe: any = this.state.recipe;
+
         return <ExpandableMenu>
 
 		    <ExpandableMenuItem headerText={'Mash'} onClick={this.toggleMashIngredients}>
-		    	<Mash recipe={recipe} onRecipeChange={this.onRecipeChanged.bind(this)}/>
+		    	<Mash recipe={this.state.recipe} onRecipeChange={this.onRecipeChange.bind(this)}/>
 		    </ExpandableMenuItem>
 
 		    <ExpandableMenuItem headerText={'Boil'} onClick={this.toggleMashIngredients}/>
@@ -70,11 +59,11 @@ export class App extends React.Component<AppProps, AppState> {
 
 		    <ExpandableMenuItem headerText={'Carbonation'} onClick={this.toggleMashIngredients}/>
 
-			<Boil recipe={recipe} onRecipeChanged={this.onRecipeChanged.bind(this)} />
+			<Boil recipe={this.state.recipe} onRecipeChange={this.onRecipeChange.bind(this)} />
 
 			<hr />
 
-			<Mash recipe={recipe} onRecipeChange={this.onRecipeChanged.bind(this)}/>
+			<Mash recipe={this.state.recipe} onRecipeChange={this.onRecipeChange.bind(this)}/>
 
 		</ExpandableMenu>;
     }

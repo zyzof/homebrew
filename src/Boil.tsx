@@ -3,13 +3,13 @@ import { BoilIngredientField } from './BoilIngredientField';
 import * as Brauhaus from 'brauhaus-ts';
 
 interface BoilProps {
-	onRecipeChanged: Function;
+	onRecipeChange: Function;
 	recipe: any;
 }
 
 interface BoilState {
 	ibu: number;
-	hops: Hop[];	//TODO: remove this, use props.recipe.spices
+	//hops: Hop[];
 	volume: number;
 }
 
@@ -28,9 +28,10 @@ export class Boil extends React.Component<BoilProps, BoilState>{
 		super(props);
 		this.state = {
 			ibu: 0,
-			hops: [{id: this.nextFieldId++, alpha: 10, weightG: 0.04, durationM: 60}],
 			volume: 20
 		};
+
+		this.addIngredientField();	//TODO remove if loading an existing recipe
 	}
 
 	private onVolumeChange(event: Event): void {
@@ -38,65 +39,45 @@ export class Boil extends React.Component<BoilProps, BoilState>{
 
 		let volume = (event.target as any).value;
 		this.props.recipe.batchSize = volume;
-		this.props.onRecipeChanged({});
+		this.props.onRecipeChange();
 	}
 
 	private addIngredientField(): void {
 		console.log('addIngredientField');
 
-		//this.props.onRecipeChanged({});
-
-		this.state.hops.push({
-			id: this.nextFieldId++,
-			alpha: 0,
-			weightG: 0,
-			durationM: 0
-		});
+		this.props.recipe.spices.push(new Brauhaus.Spice({
+			name: '',
+			weight: 0,
+			aa: 0,
+			time: 0,
+			use: '',
+			form: ''
+		}));
 		this.setState(this.state);
 	}
 
 	private removeHopAtIndex(index: number): void {
 		console.log('removeHopAtIndex: ' + index);
 
-		this.state.hops.splice(index, 1);
-		this.props.recipe.spices = [];
-		for (let hop of this.state.hops) {
-			this.props.recipe.spices.push(new Brauhaus.Spice({
-				name: '',
-				weight: hop.weightG / 1000,
-				aa: hop.alpha,
-				time: hop.durationM,
-				use: '',
-				form: ''
-			}));
-		}
-		this.setState(this.state);
-
-		this.props.onRecipeChanged({});
+		this.props.recipe.spices.splice(index, 1);
+		this.props.onRecipeChange();
 	}
 
 	private onHopChange(index: number, hop: Hop): void {
 		console.log('onHopChange: ' + hop);
 
-		this.state.hops[index] = hop;
+		let existingHop = this.props.recipe.spices[index];
+		existingHop.aa = hop.alpha;
+		existingHop.weight =  hop.weightG / 1000.0;
+		existingHop.time = hop.durationM;
 
-		this.props.recipe.spices = [];
-		for (let hop of this.state.hops) {
-			this.props.recipe.spices.push(new Brauhaus.Spice({
-				name: '',
-				weight: hop.weightG / 1000,
-				aa: hop.alpha,
-				time: hop.durationM,
-				use: '',
-				form: ''
-			}));
-		}
-
-		this.setState(this.state);
-		this.props.onRecipeChanged({});
+		this.props.onRecipeChange();
 	}
 
 	public render(): JSX.Element {
+		console.log('Boil.tsx render()');
+		console.log('recipe hops: ');
+		console.log(this.props.recipe.spices);
 		return <div className='input-screen'>
 			<hr />
 
@@ -112,12 +93,12 @@ export class Boil extends React.Component<BoilProps, BoilState>{
 			<br />
 			Hops: 
 			{
-				this.state.hops.map((value: Hop, index: number, array: Hop[]) => {
+				this.props.recipe.spices.map((value: any/*Brauhaus.ISpice*/, index: number, array: Hop[]) => {
 					return <BoilIngredientField
 							key={value.id}
-							alpha={value.alpha}
-							weightG={value.weightG}
-							durationM={value.durationM}
+							alpha={value.aa}
+							weightG={value.weight}
+							durationM={value.time}
 							onChange={this.onHopChange.bind(this, index)}
 							onRemove={this.removeHopAtIndex.bind(this, index)} />;
 				})
