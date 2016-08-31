@@ -43,7 +43,7 @@ export class Boil extends React.Component<Props, State>{
 			weight: 0,
 			aa: 0,
 			time: 0,
-			use: '',
+			use: 'boil',
 			form: ''
 		}));
 		this.props.onRecipeChange();
@@ -57,7 +57,8 @@ export class Boil extends React.Component<Props, State>{
 	}
 
 	private onHopChange(index: number, hop: Hop): void {
-		console.log('onHopChange: ' + hop);
+		console.log('onHopChange: ');
+		console.log(hop);
 
 		let existingHop = this.props.recipe.spices[index];
 		existingHop.aa = hop.alpha;

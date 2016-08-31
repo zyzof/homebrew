@@ -26,6 +26,7 @@ export class App extends React.Component<AppProps, AppState> {
 			recipe: recipe
 		};
 		this.state.recipe.add('yeast', { attenuation: 75 });	// Required for ABV calc. TODO allow user-specified fg
+		this.state.recipe.ibuMethod = 'tinseth';
 	}
 
 	private toggleMashIngredients(): void {
@@ -50,7 +51,7 @@ export class App extends React.Component<AppProps, AppState> {
 			<Mash recipe={this.state.recipe} onRecipeChange={this.onRecipeChange.bind(this)}/>
 
 			<hr />
-			
+
 			<Boil recipe={this.state.recipe} onRecipeChange={this.onRecipeChange.bind(this)} />
 
 

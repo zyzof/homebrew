@@ -18,8 +18,10 @@ export class BoilIngredientField extends React.Component<Props, State> {
 		super(props);
 	}
 
-	private onAlphaChange() {
-		let alpha = (event.target as any).value;
+	private onAlphaChange(event: Event) {
+		let alpha = +(event.target as any).value;
+		console.log('BoilIngredientField onAlphaChange()');
+		console.log(alpha);
 		this.props.onChange({
 			alpha: alpha,
 			weightG: this.props.weightG,
@@ -28,7 +30,8 @@ export class BoilIngredientField extends React.Component<Props, State> {
 	}
 
 	private onWeightChange(event: Event) {
-		let weight = (event.target as any).value;
+		let weight = +(event.target as any).value;
+		console.log('weight ' + weight);
 		this.props.onChange({
 			alpha: this.props.alpha,
 			weightG: weight,
@@ -37,7 +40,8 @@ export class BoilIngredientField extends React.Component<Props, State> {
 	}
 
 	private onDurationChange(event: Event) {
-		let duration = (event.target as any).value;
+		let duration = +(event.target as any).value;
+		console.log('duration ' + duration);
 		this.props.onChange({
 			alpha: this.props.alpha,
 			weightG: this.props.weightG,
