@@ -24,7 +24,9 @@ export class Boil extends React.Component<Props, State>{
 		super(props);
 		this.state = {};
 
-		this.addIngredientField();	//TODO remove if loading an existing recipe
+		if (this.props.recipe.spices.length === 0) {
+			this.addIngredientField();
+		}
 	}
 
 	private onVolumeChange(event: Event): void {

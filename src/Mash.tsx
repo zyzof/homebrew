@@ -32,7 +32,10 @@ export class Mash extends React.Component<MashProps, MashState>{
 		this.fermentableDataByName = {};
 		
 		this.loadFermentables();
-		this.addIngredientField();
+
+		if (this.props.recipe.fermentables.length === 0) {
+			this.addIngredientField();
+		}
 	}
 
 	private loadFermentables(): void {
@@ -101,10 +104,16 @@ export class Mash extends React.Component<MashProps, MashState>{
 			<div className='expected-abv'>%ABV: { this.props.recipe.abv }</div>
 			<br />
 			<div className='volume'>
-				<label for='volume'>Volume (L): </label><input className='volume' onChange={ this.onVolumeChange.bind(this) } />
+				<label for='volume'>Volume (L): </label>
+				<input className='volume' 
+						onChange={ this.onVolumeChange.bind(this) }
+						defaultValue={ this.props.recipe.batchSize } />
 			</div>
 			<div className='efficiency'>
-				<label for='efficiency'>Efficiency %: </label><input className='efficiency' onChange={ this.onEfficiencyChange.bind(this) } />
+				<label for='efficiency'>Efficiency %: </label>
+				<input className='efficiency'
+						onChange={ this.onEfficiencyChange.bind(this) }
+						defaultValue={ this.props.recipe.mashEfficiency } />
 			</div>
 			<br />
 			Fermentables:

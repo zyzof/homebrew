@@ -21,12 +21,26 @@ export class App extends React.Component<AppProps, AppState> {
 	constructor(props: AppProps) {
 		super(props);
 
-		let recipe = new Brauhaus.Recipe();
+		let recipe = this.loadMostRecent();
+		console.log('app.tsx ctor');
+		console.log(recipe);
+
 		this.state = {
 			recipe: recipe
 		};
 		this.state.recipe.add('yeast', { attenuation: 75 });	// Required for ABV calc. TODO allow user-specified fg
-		this.state.recipe.ibuMethod = 'tinseth';
+		this.state.recipe.ibuMethod = 'tinseth';	// Required for ibu calc
+	}
+
+	private loadMostRecent(): any {/*return Brauhaus.Recipe*/
+		let recipeStr: string = localStorage.getItem('recipes');
+		// TODO display recipes to allow selection
+		let recipe = recipeStr 
+				? new Brauhaus.Recipe(JSON.parse(recipeStr)) 
+				: new Brauhaus.Recipe();
+
+		recipe.calculate();
+		return recipe;
 	}
 
 	private toggleMashIngredients(): void {
@@ -35,6 +49,8 @@ export class App extends React.Component<AppProps, AppState> {
 
 	private onRecipeChange(): void {
 		console.log('app.tsx onRecipeChange()');
+		
+		localStorage.setItem('recipes', JSON.stringify(this.state.recipe));
 		this.state.recipe.calculate();
 		this.setState(this.state);
 	}

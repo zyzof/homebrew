@@ -37,7 +37,7 @@ export class MashIngredientField extends React.Component<Props, State> {
 	public render(): JSX.Element {
 		return <div>
 			<select onChange={this.onMaltChange.bind(this)} 
-					defaultValue={this.props.name}>
+					value={this.props.name}>
 				{
 					this.props.options.map((value: string, index: number) => {
 						return <option key={index}>{value}</option>;
