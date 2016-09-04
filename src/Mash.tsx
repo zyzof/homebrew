@@ -128,6 +128,9 @@ export class Mash extends React.Component<MashProps, MashState>{
 				})
 			}
 			<button className='add-ingredient-btn' onClick={this.addIngredientField.bind(this)}>Add Ingredient</button>
+
+			<hr />
+			
 		</div>;
 	}
 };

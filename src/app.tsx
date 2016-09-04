@@ -43,7 +43,7 @@ export class App extends React.Component<AppProps, AppState> {
 		this.state.recipe.ibuMethod = 'tinseth';	// Required for ibu calc
 	}
 
-	private loadMostRecent(): any {/*return Brauhaus.Recipe*/
+	private loadMostRecent(): any/*: Brauhaus.Recipe {*/ {
 		let recipeStr: string = localStorage.getItem('recipes');
 		// TODO display recipes to allow selection
 		let recipe = recipeStr 
@@ -73,7 +73,9 @@ export class App extends React.Component<AppProps, AppState> {
 
         return <ExpandableMenu>
 
-		    <ExpandableMenuItem headerText={'Mash'} onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Mash)} />
+		    <ExpandableMenuItem headerText='Mash'
+		    		icon='mash'
+		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Mash)} />
 		    { 
 	    		(this.state.activePanels & ActivePanelsBitMask.Mash) 
 	    			== ActivePanelsBitMask.Mash 
@@ -82,7 +84,9 @@ export class App extends React.Component<AppProps, AppState> {
 	    				: null
 			}
 
-		    <ExpandableMenuItem headerText={'Boil'} onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Boil)} />
+		    <ExpandableMenuItem headerText='Boil'
+		    		icon='boil'
+	    			onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Boil)} />
 		    {
 	    		(this.state.activePanels & ActivePanelsBitMask.Boil) 
 	    			== ActivePanelsBitMask.Boil 
@@ -91,11 +95,17 @@ export class App extends React.Component<AppProps, AppState> {
 	    				: null
 	    	}
 
-		    <ExpandableMenuItem headerText={'Timers'} onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Timers)}/>
+		    <ExpandableMenuItem headerText='Timers'
+		    		icon='timers'
+		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Timers)}/>
 
-		    <ExpandableMenuItem headerText={'Fermentation'} onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Fermentation)}/>
+		    <ExpandableMenuItem headerText='Fermentation'
+		    		icon='fermentation'
+		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Fermentation)}/>
 
-		    <ExpandableMenuItem headerText={'Carbonation'} onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Carbonation)}/>
+		    <ExpandableMenuItem headerText='Carbonation'
+		    		icon='carbonation' 
+		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Carbonation)}/>
 
 		</ExpandableMenu>;
     }

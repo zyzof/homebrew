@@ -17,20 +17,11 @@
 	margin: auto;
 }
 
-.expandable-menu-item {
-	/*position: absolute;
-	top: 0;
-	height: 50px;
-	cursor: pointer;
+.expandable-menu-item-header {
+	/*cursor: pointer;
 	transition: 0.5s transform ease;
-	-webkit-transition: -webkit-transform 0.5s ease;
-
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	overflow: hidden;
-	padding: 0;
-	margin: 0;*/
+	-webkit-transition: -webkit-transform 0.5s ease;*/
+	background: linear-gradient(to bottom, rgba(120, 120, 120, 1), rgba(200, 200, 200, 1));
 	height: 50px;
 	overflow: overlay;
 }
@@ -40,7 +31,6 @@
 	/*height: 600px;	/* TODO Don't leave this here and don't lock height */
 	background-color: #f8f8f8;
 	max-width: 600px;
-	height: 500px;
 }
 
 

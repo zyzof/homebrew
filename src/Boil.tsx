@@ -100,6 +100,9 @@ export class Boil extends React.Component<Props, State>{
 				})
 			}
 			<button className='add-ingredient-btn' onClick={this.addIngredientField.bind(this)}>Add Ingredient</button>
+
+			<hr />
+			
 		</div>;
 	}
 }
