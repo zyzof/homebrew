@@ -6,31 +6,44 @@
 
 /* CardStack/Card styles */
 
-.expandable-menu {
+.menu {
 	background: #f8f8f8;
 	width: 100%;
 	max-width: 600px;
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	overflow: overlay;
 	margin: auto;
 }
 
-.expandable-menu-item-header {
+.menu-item-header {
 	/*cursor: pointer;
 	transition: 0.5s transform ease;
 	-webkit-transition: -webkit-transform 0.5s ease;*/
 	background: linear-gradient(to bottom, rgba(120, 120, 120, 1), rgba(200, 200, 200, 1));
 	height: 50px;
-	overflow: overlay;
+	overflow: hidden;
+	display: block;
+	position: relative;
+	padding: 10px;
+}
+
+.menu-icon {
+	height: 100%;
+	min-width: 10%;
+	float: left;
 }
 
 /* Screen styles */
 .input-screen {
-	/*height: 600px;	/* TODO Don't leave this here and don't lock height */
 	background-color: #f8f8f8;
 	max-width: 600px;
+}
+
+.menu-header-text {
+	margin-left: 15%;
+	overflow: hidden;
+	line-height: 50px; /* Must match .menu-item-header */
 }
 
 

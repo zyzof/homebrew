@@ -17,7 +17,7 @@ export class ExpandableMenu extends React.Component<Props, {}>{
 	}
 
 	public render(): JSX.Element {
-		return <div className='expandable-menu' onClick={ this.handleItemClick }>
+		return <div className='menu' onClick={ this.handleItemClick }>
 					{this.props.children}
 				</div>;
 	}

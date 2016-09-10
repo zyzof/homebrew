@@ -28,9 +28,9 @@ export class ExpandableMenuItem extends React.Component<Props, State> {
 		this.props.onClick();
 	}
 
-	private getIcon(): string {
+	private getIconPath(): string {
 		let isOpen = this.state.isOpen;
-		let iconUri = this.props.icon;
+		let iconUri = 'img/' + this.props.icon;
 		if (isOpen) {
 			iconUri += '-open';
 		} else {
@@ -42,9 +42,9 @@ export class ExpandableMenuItem extends React.Component<Props, State> {
 	}
 
 	public render(): JSX.Element {
-		return <div className='expandable-menu-item-header' onClick={ this.handleClick.bind(this) }>
-			{ this.getIcon() /* TODO image element+styling */ }
-			{ this.props.headerText }
+		return <div className='menu-item-header' onClick={ this.handleClick.bind(this) }>
+			<img className='menu-icon' src={ this.getIconPath() } />
+			<div className='menu-header-text'>{ this.props.headerText }</div>
 		</div>;
 	}
 };
