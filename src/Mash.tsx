@@ -98,10 +98,10 @@ export class Mash extends React.Component<MashProps, MashState>{
 		return <div className='input-screen'>
 			<hr />
 
-			<div className='og'>OG: { this.props.recipe.og }</div>
-			<div className='srm'>SRM: { this.props.recipe.srm }</div>
+			<div className='og'>OG: { Number(this.props.recipe.og).toFixed(3) }</div>
+			<div className='srm'>SRM: { Number(this.props.recipe.color).toFixed(1) }</div>
 			<br />
-			<div className='expected-abv'>%ABV: { this.props.recipe.abv }</div>
+			<div className='expected-abv'>%ABV: { Number(this.props.recipe.abv).toFixed(2) }</div>
 			<br />
 			<div className='volume'>
 				<label for='volume'>Volume (L): </label>

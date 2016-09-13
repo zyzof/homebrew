@@ -15,8 +15,7 @@ enum ActivePanelsBitMask {
 	Mash = 1,
 	Boil = 2,
 	Timers = 4,
-	Fermentation = 8,
-	Carbonation = 16
+	Calculators = 8
 }
 
 export interface AppState {
@@ -90,22 +89,18 @@ export class App extends React.Component<AppProps, AppState> {
 		    {
 	    		(this.state.activePanels & ActivePanelsBitMask.Boil) 
 	    			== ActivePanelsBitMask.Boil 
-	    				? <Mash recipe={this.state.recipe} 
+	    				? <Boil recipe={this.state.recipe} 
 	    					onRecipeChange={this.onRecipeChange.bind(this)} />
 	    				: null
 	    	}
 
 		    <ExpandableMenuItem headerText='Timers'
-		    		icon='timers'
-		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Timers)}/>
+		    		icon='boil'
+		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Timers)} />
 
-		    <ExpandableMenuItem headerText='Fermentation'
-		    		icon='fermentation'
-		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Fermentation)}/>
-
-		    <ExpandableMenuItem headerText='Carbonation'
-		    		icon='carbonation' 
-		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Carbonation)}/>
+		    <ExpandableMenuItem headerText='Calculators'
+		    		icon='boil'
+		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Calculators)} />
 
 		</ExpandableMenu>;
     }

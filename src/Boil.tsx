@@ -33,6 +33,7 @@ export class Boil extends React.Component<Props, State>{
 		console.log('Boil.tsx onVolumeChange()');
 
 		let volume = (event.target as any).value;
+		this.props.recipe.boilSize = volume;
 		this.props.recipe.batchSize = volume;
 		this.props.onRecipeChange();
 	}
@@ -77,13 +78,13 @@ export class Boil extends React.Component<Props, State>{
 		return <div className='input-screen'>
 			<hr />
 
-			<div className='ibu'>IBU: { this.props.recipe.ibu }</div>
+			<div className='ibu'>IBU: { Number(this.props.recipe.ibu).toFixed(1) }</div>
 			<br />
 			<div className='volume'>
 				<label for='volume'>Volume (L): </label>
 				<input className='volume' 
 						onChange={ this.onVolumeChange.bind(this) }
-						defaultValue={ this.props.recipe.batchSize } />
+						defaultValue={ this.props.recipe.boilSize } />
 			</div>
 			{/* TODO allow OG override here? */}
 			<br />
@@ -93,7 +94,7 @@ export class Boil extends React.Component<Props, State>{
 					return <BoilIngredientField
 							key={value.id}
 							alpha={value.aa}
-							weightG={value.weight}
+							weightG={value.weight * 1000}
 							durationM={value.time}
 							onChange={this.onHopChange.bind(this, index)}
 							onRemove={this.removeHopAtIndex.bind(this, index)} />;

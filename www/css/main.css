@@ -65,4 +65,8 @@
 	float: left;
 }
 
+input {
+	width: 3em;
+}
+
 /*******/
