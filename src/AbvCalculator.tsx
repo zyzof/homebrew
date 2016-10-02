@@ -1,7 +1,5 @@
 import * as React from 'react';
 import * as Brauhaus from 'brauhaus-ts';
-import { AbvCalculator } from './AbvCalculator';
-import { TempIncrementCalculator } from './TempIncrementCalculator';
 
 interface Props {
 
@@ -12,7 +10,7 @@ interface State {
 	fg: number;
 }
 
-export class Calculators extends React.Component<Props, State> {
+export class AbvCalculator extends React.Component<Props, State> {
 
 	public constructor(props: Props) {
 		super(props);
@@ -33,16 +31,11 @@ export class Calculators extends React.Component<Props, State> {
 
 	public render(): JSX.Element {
 		return <div>
-			<AbvCalculator />
-
-			<p className='calc-label'>Strike temp</p>
-			{/* TODO weight of grains, water vol */}
-
-			<TempIncrementCalculator />
-
-			<p className='calc-label'>Temperature adjusted gravity</p>
-			{/* TODO gravity reading, temperature */}
-
+			<p className='calc-label'>ABV Estimation</p>
+			<label for='calc-og'>OG: </label><input className='calc-og' onChange={this.onOgChange.bind(this)} />
+			<label for='calc-fg'>FG: </label><input className='calc-fg' onChange={this.onFgChange.bind(this)}/>
+			<br />
+			ABV: { Brauhaus.Utils.calcAbv(this.state.og, this.state.fg) }
 		</div>;
 	}
 }

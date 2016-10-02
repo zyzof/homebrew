@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as Brauhaus from './lib/brauhaus-ts/src';
+import * as Brauhaus from 'brauhaus-ts';
 
 import { ExpandableMenu, ExpandableMenuItem } from './ExpandableMenu';
 import { Mash } from './Mash';
