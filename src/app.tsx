@@ -1,12 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as Brauhaus from 'brauhaus-ts';
+import * as Brauhaus from './lib/brauhaus-ts/src';
 
 import { ExpandableMenu, ExpandableMenuItem } from './ExpandableMenu';
 import { Mash } from './Mash';
 import { Boil } from './Boil';
+import { Calculators } from './Calculators';
 
-export interface AppProps { 
+export interface AppProps {
 
 };
 
@@ -19,7 +20,7 @@ enum ActivePanelsBitMask {
 }
 
 export interface AppState {
-	recipe: any;	// Brauhaus.Recipe (typings TODO)
+	recipe: Brauhaus.Recipe;
 	activePanels: ActivePanelsBitMask;
 };
 
@@ -42,7 +43,7 @@ export class App extends React.Component<AppProps, AppState> {
 		this.state.recipe.ibuMethod = 'tinseth';	// Required for ibu calc
 	}
 
-	private loadMostRecent(): any/*: Brauhaus.Recipe {*/ {
+	private loadMostRecent(): Brauhaus.Recipe {
 		let recipeStr: string = localStorage.getItem('recipes');
 		// TODO display recipes to allow selection
 		let recipe = recipeStr 
@@ -76,8 +77,7 @@ export class App extends React.Component<AppProps, AppState> {
 		    		icon='mash'
 		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Mash)} />
 		    { 
-	    		(this.state.activePanels & ActivePanelsBitMask.Mash) 
-	    			== ActivePanelsBitMask.Mash 
+	    		this.isOpen(ActivePanelsBitMask.Mash)
 	    				? <Mash recipe={this.state.recipe} 
 	    					onRecipeChange={this.onRecipeChange.bind(this)} />
 	    				: null
@@ -87,8 +87,7 @@ export class App extends React.Component<AppProps, AppState> {
 		    		icon='boil'
 	    			onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Boil)} />
 		    {
-	    		(this.state.activePanels & ActivePanelsBitMask.Boil) 
-	    			== ActivePanelsBitMask.Boil 
+	    		this.isOpen(ActivePanelsBitMask.Boil)
 	    				? <Boil recipe={this.state.recipe} 
 	    					onRecipeChange={this.onRecipeChange.bind(this)} />
 	    				: null
@@ -101,8 +100,17 @@ export class App extends React.Component<AppProps, AppState> {
 		    <ExpandableMenuItem headerText='Calculators'
 		    		icon='boil'
 		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Calculators)} />
+		    {
+	    		this.isOpen(ActivePanelsBitMask.Calculators) 
+	    				? <Calculators />
+	    				: null
+	    	}
 
 		</ExpandableMenu>;
+    }
+
+    private isOpen(panelId: ActivePanelsBitMask): boolean {
+    	return (this.state.activePanels & panelId) == panelId;
     }
 
     public showContentForId(id: string) {

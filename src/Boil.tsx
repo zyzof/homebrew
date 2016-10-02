@@ -4,7 +4,7 @@ import * as Brauhaus from 'brauhaus-ts';
 
 interface Props {
 	onRecipeChange: Function;
-	recipe: any;
+	recipe: Brauhaus.Recipe;
 };
 
 interface State {
@@ -84,13 +84,13 @@ export class Boil extends React.Component<Props, State>{
 				<label for='volume'>Volume (L): </label>
 				<input className='volume' 
 						onChange={ this.onVolumeChange.bind(this) }
-						defaultValue={ this.props.recipe.boilSize } />
+						defaultValue={ String(this.props.recipe.boilSize) } />
 			</div>
 			{/* TODO allow OG override here? */}
 			<br />
 			Hops: 
 			{
-				this.props.recipe.spices.map((value: any/*Brauhaus.ISpice*/, index: number, array: Hop[]) => {
+				this.props.recipe.spices.map((value: Brauhaus.Spice, index: number, array: Brauhaus.Spice[]) => {
 					return <BoilIngredientField
 							key={value.id}
 							alpha={value.aa}

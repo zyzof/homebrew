@@ -12,7 +12,7 @@ class FermentableFromDataFile {
 }
 
 export interface MashProps {
-	recipe: any;	//TODO type info!!
+	recipe: Brauhaus.Recipe;
 	onRecipeChange: Function;
 }
 
@@ -107,18 +107,18 @@ export class Mash extends React.Component<MashProps, MashState>{
 				<label for='volume'>Volume (L): </label>
 				<input className='volume' 
 						onChange={ this.onVolumeChange.bind(this) }
-						defaultValue={ this.props.recipe.batchSize } />
+						defaultValue={ String(this.props.recipe.batchSize) } />
 			</div>
 			<div className='efficiency'>
 				<label for='efficiency'>Efficiency %: </label>
 				<input className='efficiency'
 						onChange={ this.onEfficiencyChange.bind(this) }
-						defaultValue={ this.props.recipe.mashEfficiency } />
+						defaultValue={ String(this.props.recipe.mashEfficiency) } />
 			</div>
 			<br />
 			Fermentables:
 			{
-				this.props.recipe.fermentables.map((value: any/* Brauhaus.IFermentable */, index: number) => {
+				this.props.recipe.fermentables.map((value: Brauhaus.Fermentable, index: number) => {
 					return <MashIngredientField key={value.id}
 							options={this.state.fermentableOptions}
 							name={value.name} 

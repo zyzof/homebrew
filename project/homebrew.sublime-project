@@ -4,7 +4,9 @@
 		{
 			"cmd":
 			[
-				"npm", "run", "build"
+				"npm",
+				"run",
+				"build"
 			],
 			"name": "homebrew",
 			"windows":
@@ -25,7 +27,10 @@
 				"project",
 				"node_modules"
 			],
-			"path": "../"
+			"path": "E:\\Devel\\Homebrew\\homebrew-web"
+		},
+		{
+			"path": "E:\\Devel\\Homebrew\\brauhaus-ts"
 		}
 	]
 }

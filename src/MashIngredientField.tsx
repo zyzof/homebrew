@@ -44,7 +44,9 @@ export class MashIngredientField extends React.Component<Props, State> {
 					})
 				}
 			</select>
-			<input onChange={this.onQuantityChange.bind(this)} defaultValue={this.props.quantity} />
+			<input onChange={this.onQuantityChange.bind(this)}
+					defaultValue={ String(this.props.quantity) } />
+					
 			<button onClick={this.props.onRemove.bind(this)}>X</button>
 
 		</div>;
