@@ -32,7 +32,7 @@ export class Boil extends React.Component<Props, State>{
 	private onVolumeChange(event: Event): void {
 		console.log('Boil.tsx onVolumeChange()');
 
-		let volume = (event.target as any).value;
+		let volume = +(event.target as any).value;
 		this.props.recipe.boilSize = volume;
 		this.props.recipe.batchSize = volume;
 		this.props.onRecipeChange();

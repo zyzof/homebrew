@@ -2,6 +2,8 @@ import * as React from 'react';
 import * as Brauhaus from 'brauhaus-ts';
 import { AbvCalculator } from './AbvCalculator';
 import { TempIncrementCalculator } from './TempIncrementCalculator';
+import { StrikeTempCalculator } from './StrikeTempCalculator';
+import { TempAdjustedGravityCalculator } from './TempAdjustedGravityCalculator';
 
 interface Props {
 
@@ -34,14 +36,9 @@ export class Calculators extends React.Component<Props, State> {
 	public render(): JSX.Element {
 		return <div>
 			<AbvCalculator />
-
-			<p className='calc-label'>Strike temp</p>
-			{/* TODO weight of grains, water vol */}
-
+			<StrikeTempCalculator />
 			<TempIncrementCalculator />
-
-			<p className='calc-label'>Temperature adjusted gravity</p>
-			{/* TODO gravity reading, temperature */}
+			<TempAdjustedGravityCalculator />
 
 		</div>;
 	}
