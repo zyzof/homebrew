@@ -23,6 +23,6 @@
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-motion": "^0.4.4",
-    "brauhaus-ts": "file:../brauhaus-ts"
+    "brauhaus-ts": "git://github.com/zyzof/brauhaus-ts.git"
   }
 }
