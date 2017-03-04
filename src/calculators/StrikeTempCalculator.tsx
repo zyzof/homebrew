@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Brauhaus from 'brauhaus-ts';
+import { Utils } from '../utils'
 
 interface Props {
 
@@ -37,24 +38,38 @@ export class StrikeTempCalculator extends React.Component<Props, State> {
 			this.state.grainTemp,
 			this.state.targetTemp
 		);
+		let strikeTempStr: string = Utils.formatNumberForDisplay(strikeTemp, 1);
 
-		return <div>
+		return <div className="panel-container">
 			<h2>Strike Temperature</h2>
-			<label class='label' className='label'>Volume: </label>
-			<input onChange={this.onStateChange.bind(this, 'volume')}/>
 
-			<label class='label' className='label'>Grain weight: </label>
-			<input onChange={this.onStateChange.bind(this, 'grainWeight')} />
+			<div className='panel'>
+				<div className='one-half'>
+					<label class='label' className='label'>Volume: </label>
+					<input onChange={this.onStateChange.bind(this, 'volume')}/>
+				</div>
 
-			<label class='label' className='label'>Grain temperature: </label>
-			<input onChange={this.onStateChange.bind(this, 'grainTemp')} />
+				<div className='one-half'>
+					<label class='label' className='label'>Grain weight: </label>
+					<input onChange={this.onStateChange.bind(this, 'grainWeight')} />
+				</div>
 
-			<label class='label' className='label'>Target temperature: </label>
-			<input onChange={this.onStateChange.bind(this, 'targetTemp')} />
+				<div className='one-half'>
+					<label class='label' className='label'>Grain temperature: </label>
+					<input onChange={this.onStateChange.bind(this, 'grainTemp')} />
+				</div>
 
-			<div className='calculated-label'>
-				<p className='label'>Strike at: { strikeTemp }&deg;C </p>
+				<div className='one-half'>
+					<label class='label' className='label'>Target temperature: </label>
+					<input onChange={this.onStateChange.bind(this, 'targetTemp')} />
+				</div>
 			</div>
+
+			<div className='calculated-label full-span'>
+				<p className='label'>Strike at: { strikeTempStr }&deg;C </p>
+			</div>
+
+			<hr />
 		</div>;
 	}
 }

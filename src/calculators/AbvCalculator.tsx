@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Brauhaus from 'brauhaus-ts';
+import { Utils } from '../utils';
 
 interface Props {
 
@@ -30,18 +31,28 @@ export class AbvCalculator extends React.Component<Props, State> {
 	}
 
 	public render(): JSX.Element {
-		return <div>
+		let abv: number = Brauhaus.Utils.calcAbv(this.state.og, this.state.fg);
+		let abvStr: string = Utils.formatNumberForDisplay(abv, 1);
+		return <div className="panel-container">
 			<h2>ABV Estimation</h2>
 
-			<label for='calc-og' className='label'>OG: </label>
-			<input className='calc-og' onChange={this.onOgChange.bind(this)} />
+			<div className="panel">
+				<div className='one-half'>
+					<label for='calc-og' className='label'>OG: </label>
+					<input className='calc-og' onChange={this.onOgChange.bind(this)} />
+				</div>
 
-			<label for='calc-fg' className='label'>FG: </label>
-			<input className='calc-fg' onChange={this.onFgChange.bind(this)}/>
-
-			<div className='calculated-label'>
-				<p className='label'>ABV: { Brauhaus.Utils.calcAbv(this.state.og, this.state.fg) }</p>
+				<div className='one-half'>
+					<label for='calc-fg' className='label'>FG: </label>
+					<input className='calc-fg' onChange={this.onFgChange.bind(this)}/>
+				</div>
 			</div>
+
+			<div className='calculated-label full-span'>
+				<p className='label'>ABV: { abvStr }%</p>
+			</div>
+
+			<hr />
 		</div>;
 	}
 }

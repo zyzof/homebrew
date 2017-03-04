@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 TODO: 
 
@@ -55,30 +56,212 @@ input {
   font-size: 18px;
   font-weight: bold; }
 
-/*.label
-{
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-}*/
+@media screen and (max-width: 400px) and (—: 1px) {
+  .one-half {
+    float: left;
+    display: block;
+    margin-right: 16.03631%;
+    width: 100%; }
+    .one-half:last-child {
+      margin-right: 0; }
+    .one-half:nth-child(1n) {
+      margin-right: 0; }
+    .one-half:nth-child(1n+1) {
+      clear: left; } }
+
+@media screen and (min-width: 400px) and (max-width: 834px) {
+  .one-half {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%; }
+    .one-half:last-child {
+      margin-right: 0; }
+    .one-half:nth-child(1n) {
+      margin-right: 0; }
+    .one-half:nth-child(1n+1) {
+      clear: left; } }
+
+@media screen and (min-width: 835px) and (max-width: 1099px) {
+  .one-half {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 48.21067%; }
+    .one-half:last-child {
+      margin-right: 0; }
+    .one-half:nth-child(2n) {
+      margin-right: 0; }
+    .one-half:nth-child(2n+1) {
+      clear: left; } }
+
+@media screen and (min-width: 1100px) {
+  .one-half {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    .one-half:last-child {
+      margin-right: 0; }
+    .one-half:nth-child(2n) {
+      margin-right: 0; }
+    .one-half:nth-child(2n+1) {
+      clear: left; } }
+
+@media screen and (max-width: 400px) and (—: 1px) {
+  .one-third {
+    float: left;
+    display: block;
+    margin-right: 16.03631%;
+    width: 100%; }
+    .one-third:last-child {
+      margin-right: 0; }
+    .one-third:nth-child(1n) {
+      margin-right: 0; }
+    .one-third:nth-child(1n+1) {
+      clear: left; } }
+
+@media screen and (min-width: 400px) and (max-width: 834px) {
+  .one-third {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%; }
+    .one-third:last-child {
+      margin-right: 0; }
+    .one-third:nth-child(1n) {
+      margin-right: 0; }
+    .one-third:nth-child(1n+1) {
+      clear: left; } }
+
+@media screen and (min-width: 835px) and (max-width: 1099px) {
+  .one-third {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 30.86124%; }
+    .one-third:last-child {
+      margin-right: 0; }
+    .one-third:nth-child(3n) {
+      margin-right: 0; }
+    .one-third:nth-child(3n+1) {
+      clear: left; } }
+
+@media screen and (min-width: 1100px) {
+  .one-third {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    .one-third:last-child {
+      margin-right: 0; }
+    .one-third:nth-child(3n) {
+      margin-right: 0; }
+    .one-third:nth-child(3n+1) {
+      clear: left; } }
+
+@media screen and (max-width: 400px) and (—: 1px) {
+  .one-quarter {
+    float: left;
+    display: block;
+    margin-right: 16.03631%;
+    width: 100%; }
+    .one-quarter:last-child {
+      margin-right: 0; }
+    .one-quarter:nth-child(1n) {
+      margin-right: 0; }
+    .one-quarter:nth-child(1n+1) {
+      clear: left; } }
+
+@media screen and (min-width: 400px) and (max-width: 834px) {
+  .one-quarter {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 46.28851%; }
+    .one-quarter:last-child {
+      margin-right: 0; }
+    .one-quarter:nth-child(2n) {
+      margin-right: 0; }
+    .one-quarter:nth-child(2n+1) {
+      clear: left; } }
+
+@media screen and (min-width: 835px) and (max-width: 1099px) {
+  .one-quarter {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 22.316%; }
+    .one-quarter:last-child {
+      margin-right: 0; }
+    .one-quarter:nth-child(4n) {
+      margin-right: 0; }
+    .one-quarter:nth-child(4n+1) {
+      clear: left; } }
+
+@media screen and (min-width: 1100px) {
+  .one-quarter {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    .one-quarter:last-child {
+      margin-right: 0; }
+    .one-quarter:nth-child(4n) {
+      margin-right: 0; }
+    .one-quarter:nth-child(4n+1) {
+      clear: left; } }
+
+@media screen and (max-width: 400px) and (—: 1px) {
+  .full-span {
+    float: left;
+    display: block;
+    margin-right: 16.03631%;
+    width: 100%; }
+    .full-span:last-child {
+      margin-right: 0; } }
+
+@media screen and (min-width: 400px) and (max-width: 834px) {
+  .full-span {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%; }
+    .full-span:last-child {
+      margin-right: 0; } }
+
+@media screen and (min-width: 835px) and (max-width: 1099px) {
+  .full-span {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 100%; }
+    .full-span:last-child {
+      margin-right: 0; } }
+
+@media screen and (min-width: 1100px) {
+  .full-span {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .full-span:last-child {
+      margin-right: 0; } }
+
 .panel-container {
   padding-left: 10px;
   padding-right: 10px;
   background-color: #f8f8f8;
   max-width: 600px; }
 
-/* Mash screen styles TODO: more generic UI styling (i.e. not panel-specific); */
-.og {
-  float: left; }
-
-.srm {
-  float: right; }
-
-.fg {
-  float: left; }
-
-.expected-abv {
-  float: left; }
+.outer-container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto; }
+  .outer-container::after {
+    clear: both;
+    content: "";
+    display: block; }
 
 .menu {
   background: #f8f8f8;

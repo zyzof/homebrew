@@ -38,22 +38,32 @@ export class TempIncrementCalculator extends React.Component<Props, State> {
 			this.state.targetTemp
 		);
 
-		return <div>
+		return <div className='panel-container'>
 			<h2>Temperature Increment</h2>
 
-			<label className='label'>Volume: </label>
-			<input onChange={this.onStateChange.bind(this, 'volume')}/>
+			<div className='panel'>
+				<div className='one-half'>
+					<label className='label'>Volume: </label>
+					<input onChange={this.onStateChange.bind(this, 'volume')}/>
+				</div>
 
-			<label className='label'>Grain weight: </label>
-			<input onChange={this.onStateChange.bind(this, 'grainWeight')} />
+				<div className='one-half'>
+					<label className='label'>Grain weight: </label>
+					<input onChange={this.onStateChange.bind(this, 'grainWeight')} />
+				</div>
 
-			<label className='label'>Initial temperature: </label>
-			<input onChange={this.onStateChange.bind(this, 'initialTemp')} />
+				<div className='one-half'>
+					<label className='label'>Initial temperature: </label>
+					<input onChange={this.onStateChange.bind(this, 'initialTemp')} />
+				</div>
 
-			<label className='label'>Target temperature: </label>
-			<input onChange={this.onStateChange.bind(this, 'targetTemp')} />
+				<div className='one-half'>
+					<label className='label'>Target temperature: </label>
+					<input onChange={this.onStateChange.bind(this, 'targetTemp')} />
+				</div>
+			</div>
 
-			<div className='calculated-label'>
+			<div className='calculated-label full-span'>
 				<p className='label'>Add { boilingWaterVol }L boiling water </p>
 			</div>
 		</div>;

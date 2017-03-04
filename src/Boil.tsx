@@ -78,29 +78,32 @@ export class Boil extends React.Component<Props, State>{
 		return <div className='panel-container'>
 			<hr />
 
-			<div className='calculated-label'>IBU: { Number(this.props.recipe.ibu).toFixed(1) }</div>
-			<br />
-			<div className='volume'>
-				<label for='volume' className='label'>Volume (L): </label>
-				<input className='volume' 
-						onChange={ this.onVolumeChange.bind(this) }
-						defaultValue={ String(this.props.recipe.boilSize) } />
+			<div className='panel'>
+				<div className='volume'>
+					<label for='volume' className='label'>Volume (L): </label>
+					<input className='volume' 
+							onChange={ this.onVolumeChange.bind(this) }
+							defaultValue={ String(this.props.recipe.boilSize) } />
+				</div>
 			</div>
 			{/* TODO allow OG override here? */}
-			<br />
-			<p className='label'>Hops: </p>
-			{
-				this.props.recipe.spices.map((value: Brauhaus.Spice, index: number, array: Brauhaus.Spice[]) => {
-					return <BoilIngredientField
-							key={value.id}
-							alpha={value.aa}
-							weightG={value.weight * 1000}
-							durationM={value.time}
-							onChange={this.onHopChange.bind(this, index)}
-							onRemove={this.removeHopAtIndex.bind(this, index)} />;
-				})
-			}
-			<button className='add-ingredient-btn' onClick={this.addIngredientField.bind(this)}>Add Ingredient</button>
+			<div className='panel'>
+				<label className='label'>Hops: </label>
+				{
+					this.props.recipe.spices.map((value: Brauhaus.Spice, index: number, array: Brauhaus.Spice[]) => {
+						return <BoilIngredientField
+								key={value.id}
+								alpha={value.aa}
+								weightG={value.weight * 1000}
+								durationM={value.time}
+								onChange={this.onHopChange.bind(this, index)}
+								onRemove={this.removeHopAtIndex.bind(this, index)} />;
+					})
+				}
+				<button className='add-ingredient-btn' onClick={this.addIngredientField.bind(this)}>Add Ingredient</button>
+			</div>
+
+			<div className='calculated-label'>IBU: { Number(this.props.recipe.ibu).toFixed(0) }</div>
 
 			<hr />
 			

@@ -34,11 +34,9 @@ export class Calculators extends React.Component<Props, State> {
 	}
 
 	public render(): JSX.Element {
-		return <div className='panel-container'>
+		return <div>
 			<AbvCalculator />
-			<hr />
 			<StrikeTempCalculator />
-			<hr />
 			<TempIncrementCalculator />
 			<hr />
 			<TempAdjustedGravityCalculator />

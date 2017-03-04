@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Brauhaus from 'brauhaus-ts';
+import { Utils } from '../utils';
 
 interface Props {
 
@@ -31,18 +32,25 @@ export class TempAdjustedGravityCalculator extends React.Component<Props, State>
 			this.state.og,
 			this.state.temp
 		);
+		let adjustedGravityStr: string = Utils.formatNumberForDisplay(adjustedGravity, 3);
 
-		return <div>
+		return <div className='panel-container'>
 			<h2>Temperature Adjusted Gravity</h2>
 
-			<label className='label'>Measured Gravity: </label>
-			<input onChange={this.onStateChange.bind(this, 'og')}/>
+			<div className='panel'>
+				<div className='one-half'>
+					<label className='label'>Measured Gravity: </label>
+					<input onChange={this.onStateChange.bind(this, 'og')}/>
+				</div>
 
-			<label className='label'>Temperature: </label>
-			<input onChange={this.onStateChange.bind(this, 'temp')} />
+				<div className='one-half'>
+					<label className='label'>Temperature: </label>
+					<input onChange={this.onStateChange.bind(this, 'temp')} />
+				</div>
+			</div>
 
-			<div className='calculated-label'>
-				<p className='label'>Room Temperature Gravity: { adjustedGravity } </p>
+			<div className='calculated-label full-span'>
+				<p className='label'>Room Temperature Gravity: { adjustedGravityStr } </p>
 			</div>
 		</div>;
 	}

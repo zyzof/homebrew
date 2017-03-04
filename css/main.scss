@@ -60,17 +60,21 @@ input {
 	width: 3em;
 }
 
-.calculated-panel
+.panel
 {
-
+	//@include one-third;
 }
 
 .calculated-label
 {
-	//@include one-quarter;
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	font-weight: bold;
+}
+
+.input-panel
+{
+
 }
 
 .label-field
@@ -78,12 +82,25 @@ input {
 
 }
 
-/*.label
+.one-half
 {
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-}*/
+	@include one-half;
+}
+
+.one-third
+{
+	@include one-third;
+}
+
+.one-quarter
+{
+	@include one-quarter;
+}
+
+.full-span
+{
+	@include full-span;
+}
 
 .panel-container
 {
@@ -93,21 +110,9 @@ input {
 	max-width: 600px;
 }
 
-/* Mash screen styles TODO: more generic UI styling (i.e. not panel-specific); */
-.og {
-	float: left;
-}
-
-.srm {
-	float: right;
-}
-
-.fg {
-	float: left;
-}
-
-.expected-abv {
-	float: left;
+.outer-container
+{
+	@include outer-container;
 }
 
 .menu {
