@@ -31,11 +31,17 @@ export class AbvCalculator extends React.Component<Props, State> {
 
 	public render(): JSX.Element {
 		return <div>
-			<p className='calc-label'>ABV Estimation</p>
-			<label for='calc-og'>OG: </label><input className='calc-og' onChange={this.onOgChange.bind(this)} />
-			<label for='calc-fg'>FG: </label><input className='calc-fg' onChange={this.onFgChange.bind(this)}/>
-			<br />
-			ABV: { Brauhaus.Utils.calcAbv(this.state.og, this.state.fg) }
+			<h2>ABV Estimation</h2>
+
+			<label for='calc-og' className='label'>OG: </label>
+			<input className='calc-og' onChange={this.onOgChange.bind(this)} />
+
+			<label for='calc-fg' className='label'>FG: </label>
+			<input className='calc-fg' onChange={this.onFgChange.bind(this)}/>
+
+			<div className='calculated-label'>
+				<p className='label'>ABV: { Brauhaus.Utils.calcAbv(this.state.og, this.state.fg) }</p>
+			</div>
 		</div>;
 	}
 }

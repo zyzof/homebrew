@@ -75,20 +75,20 @@ export class Boil extends React.Component<Props, State>{
 		/*console.log('Boil.tsx render()');
 		console.log('recipe hops: ');
 		console.log(this.props.recipe.spices);*/
-		return <div className='input-screen'>
+		return <div className='panel-container'>
 			<hr />
 
-			<div className='ibu'>IBU: { Number(this.props.recipe.ibu).toFixed(1) }</div>
+			<div className='calculated-label'>IBU: { Number(this.props.recipe.ibu).toFixed(1) }</div>
 			<br />
 			<div className='volume'>
-				<label for='volume'>Volume (L): </label>
+				<label for='volume' className='label'>Volume (L): </label>
 				<input className='volume' 
 						onChange={ this.onVolumeChange.bind(this) }
 						defaultValue={ String(this.props.recipe.boilSize) } />
 			</div>
 			{/* TODO allow OG override here? */}
 			<br />
-			Hops: 
+			<p className='label'>Hops: </p>
 			{
 				this.props.recipe.spices.map((value: Brauhaus.Spice, index: number, array: Brauhaus.Spice[]) => {
 					return <BoilIngredientField

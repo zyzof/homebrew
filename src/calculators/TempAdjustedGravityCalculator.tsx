@@ -33,10 +33,17 @@ export class TempAdjustedGravityCalculator extends React.Component<Props, State>
 		);
 
 		return <div>
-			<p className='calc-label'>Temperature Adjusted Gravity</p>
-			Measured Gravity: <input onChange={this.onStateChange.bind(this, 'og')}/>
-			Temperature: <input onChange={this.onStateChange.bind(this, 'temp')} />
-			<p className='calc-label'>Room Temperature Gravity: { adjustedGravity } </p>
+			<h2>Temperature Adjusted Gravity</h2>
+
+			<label className='label'>Measured Gravity: </label>
+			<input onChange={this.onStateChange.bind(this, 'og')}/>
+
+			<label className='label'>Temperature: </label>
+			<input onChange={this.onStateChange.bind(this, 'temp')} />
+
+			<div className='calculated-label'>
+				<p className='label'>Room Temperature Gravity: { adjustedGravity } </p>
+			</div>
 		</div>;
 	}
 }

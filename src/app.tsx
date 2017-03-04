@@ -93,12 +93,14 @@ export class App extends React.Component<AppProps, AppState> {
 	    				: null
 	    	}
 
+		    {/*
 		    <ExpandableMenuItem headerText='Timers'
 		    		icon='boil'
 		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Timers)} />
+	    	*/}
 
 		    <ExpandableMenuItem headerText='Calculators'
-		    		icon='boil'
+		    		icon='calculators'
 		    		onClick={this.togglePanel.bind(this, ActivePanelsBitMask.Calculators)} />
 		    {
 	    		this.isOpen(ActivePanelsBitMask.Calculators) 
@@ -111,10 +113,6 @@ export class App extends React.Component<AppProps, AppState> {
 
     private isOpen(panelId: ActivePanelsBitMask): boolean {
     	return (this.state.activePanels & panelId) == panelId;
-    }
-
-    public showContentForId(id: string) {
-
     }
 }
 

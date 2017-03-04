@@ -4,9 +4,10 @@
   "description": "",
   "main": "www/app.js",
   "scripts": {
-    "build": "ntsc -p ./src",
+    "build": "ntsc -p ./src && node-sass --include-path node_modules/bourbon-neat/app/assets/stylesheets css/main.scss www/css/main.css",
+    "build-css": "node-sass --include-path node_modules/bourbon-neat/app/assets/stylesheets css/main.scss www/css/main.css",
     "postbuild": "browserify -t [ babelify --presets es2015 ] temp/app.js > www/js/bundle.js",
-    "release": "tsc -p ./src && browserify -t [ babelify --presets es2015 ] temp/app.js > www/js/bundle.js && uglifyjs www/js/bundle.js --compress --mangle -o www/js/bundle.min.js",
+    "release": "ntsc -p ./src && browserify -t [ babelify --presets es2015 ] temp/app.js > www/js/bundle.js && uglifyjs www/js/bundle.js --compress --mangle -o www/js/bundle.min.js",
     "serve": "http-server ./www -o -c-1",
     "lint": "tslint -o lint.txt src/**/*.ts"
   },
@@ -15,14 +16,16 @@
   "devDependencies": {
     "babel-preset-es2015": "6.14.0",
     "babelify": "7.3.0",
+    "bourbon-neat": "^1.8.0",
     "browserify": "13.0.1",
+    "node-sass": "^3.11.2",
     "ntypescript": "1.201609060105.1",
     "uglify-js": "2.7.3"
   },
   "dependencies": {
+    "brauhaus-ts": "file:../brauhaus-ts",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "react-motion": "^0.4.4",
-    "brauhaus-ts": "git://github.com/zyzof/brauhaus-ts.git"
+    "react-motion": "^0.4.4"
   }
 }

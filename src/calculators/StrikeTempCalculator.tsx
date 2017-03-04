@@ -39,13 +39,22 @@ export class StrikeTempCalculator extends React.Component<Props, State> {
 		);
 
 		return <div>
-			<p className='calc-label'>Strike Temperature</p>
-			Volume: <input onChange={this.onStateChange.bind(this, 'volume')}/>
-			Grain weight: <input onChange={this.onStateChange.bind(this, 'grainWeight')} />
-			Grain temperature: <input onChange={this.onStateChange.bind(this, 'grainTemp')} />
-			Target temperature: <input onChange={this.onStateChange.bind(this, 'targetTemp')} />
+			<h2>Strike Temperature</h2>
+			<label class='label' className='label'>Volume: </label>
+			<input onChange={this.onStateChange.bind(this, 'volume')}/>
 
-			<p className='calc-label'>Strike temp: { strikeTemp } </p>
+			<label class='label' className='label'>Grain weight: </label>
+			<input onChange={this.onStateChange.bind(this, 'grainWeight')} />
+
+			<label class='label' className='label'>Grain temperature: </label>
+			<input onChange={this.onStateChange.bind(this, 'grainTemp')} />
+
+			<label class='label' className='label'>Target temperature: </label>
+			<input onChange={this.onStateChange.bind(this, 'targetTemp')} />
+
+			<div className='calculated-label'>
+				<p className='label'>Strike at: { strikeTemp }&deg;C </p>
+			</div>
 		</div>;
 	}
 }

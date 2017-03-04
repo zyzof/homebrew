@@ -44,7 +44,7 @@ export class ExpandableMenuItem extends React.Component<Props, State> {
 	public render(): JSX.Element {
 		return <div className='menu-item-header' onClick={ this.handleClick.bind(this) }>
 			<img className='menu-icon' src={ this.getIconPath() } />
-			<div className='menu-header-text'>{ this.props.headerText }</div>
+			<h1>{ this.props.headerText }</h1>
 		</div>;
 	}
 };

@@ -1,72 +1,106 @@
+/*
+TODO: 
+
+calculated label styling
+
+input label styling
+
+input field styling
+
+heading text styling
+
+button styling
+*/
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
 #example {
-	position: relative;
-	display: block;
-	margin: auto;
-}
+  /* Main element from index.html */
+  position: relative;
+  display: block;
+  margin: auto; }
 
-/* CardStack/Card styles */
+h1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  left: 90px;
+  margin: 0px;
+  overflow: hidden; }
 
-.menu {
-	background: #f8f8f8;
-	width: 100%;
-	max-width: 600px;
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	margin: auto;
-}
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: bold; }
 
-.menu-item-header {
-	/*cursor: pointer;
-	transition: 0.5s transform ease;
-	-webkit-transition: -webkit-transform 0.5s ease;*/
-	background: linear-gradient(to bottom, rgba(120, 120, 120, 1), rgba(200, 200, 200, 1));
-	height: 50px;
-	overflow: hidden;
-	display: block;
-	position: relative;
-	padding: 10px;
-}
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; }
 
-.menu-icon {
-	height: 100%;
-	min-width: 10%;
-	float: left;
-}
-
-/* Screen styles */
-.input-screen {
-	background-color: #f8f8f8;
-	max-width: 600px;
-}
-
-.menu-header-text {
-	margin-left: 15%;
-	overflow: hidden;
-	line-height: 50px; /* Must match .menu-item-header */
-}
-
-
-
-/* Mash screen styles */
-.og {
-	float: left;
-}
-
-.srm {
-	float: right;
-}
-
-.fg {
-	float: left;
-}
-
-.expected-abv {
-	float: left;
-}
+label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; }
 
 input {
-	width: 3em;
-}
+  width: 3em; }
 
-/*******/
+.calculated-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: bold; }
+
+/*.label
+{
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}*/
+.panel-container {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #f8f8f8;
+  max-width: 600px; }
+
+/* Mash screen styles TODO: more generic UI styling (i.e. not panel-specific); */
+.og {
+  float: left; }
+
+.srm {
+  float: right; }
+
+.fg {
+  float: left; }
+
+.expected-abv {
+  float: left; }
+
+.menu {
+  background: #f8f8f8;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: auto; }
+
+.menu-item-header {
+  /*cursor: pointer;
+	transition: 0.5s transform ease;
+	-webkit-transition: -webkit-transform 0.5s ease;*/
+  background: linear-gradient(to bottom, #787878, #c8c8c8);
+  height: 75px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding: 10px; }
+
+.menu-icon {
+  height: 100%;
+  min-width: 10%;
+  float: left; }

@@ -39,13 +39,23 @@ export class TempIncrementCalculator extends React.Component<Props, State> {
 		);
 
 		return <div>
-			<p className='calc-label'>Temperature increment</p>
-			Volume: <input onChange={this.onStateChange.bind(this, 'volume')}/>
-			Grain weight: <input onChange={this.onStateChange.bind(this, 'grainWeight')} />
-			Initial temperature: <input onChange={this.onStateChange.bind(this, 'initialTemp')} />
-			Target temperature: <input onChange={this.onStateChange.bind(this, 'targetTemp')} />
+			<h2>Temperature Increment</h2>
 
-			<p className='calc-label'>Add { boilingWaterVol }L boiling water </p>
+			<label className='label'>Volume: </label>
+			<input onChange={this.onStateChange.bind(this, 'volume')}/>
+
+			<label className='label'>Grain weight: </label>
+			<input onChange={this.onStateChange.bind(this, 'grainWeight')} />
+
+			<label className='label'>Initial temperature: </label>
+			<input onChange={this.onStateChange.bind(this, 'initialTemp')} />
+
+			<label className='label'>Target temperature: </label>
+			<input onChange={this.onStateChange.bind(this, 'targetTemp')} />
+
+			<div className='calculated-label'>
+				<p className='label'>Add { boilingWaterVol }L boiling water </p>
+			</div>
 		</div>;
 	}
 }

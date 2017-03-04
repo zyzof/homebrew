@@ -95,28 +95,26 @@ export class Mash extends React.Component<MashProps, MashState>{
 		console.log('Recipe fermentables: ');
 		console.log(this.props.recipe.fermentables);
 
-		return <div className='input-screen'>
+		return <div className='panel-container'>
 			<hr />
 
-			<div className='og'>OG: { Number(this.props.recipe.og).toFixed(3) }</div>
-			<div className='srm'>SRM: { Number(this.props.recipe.color).toFixed(1) }</div>
-			<br />
-			<div className='expected-abv'>%ABV: { Number(this.props.recipe.abv).toFixed(2) }</div>
-			<br />
+			<div className='calculated-label'>OG: { Number(this.props.recipe.og).toFixed(3) }</div>
+			<div className='calculated-label'>SRM: { Number(this.props.recipe.color).toFixed(1) }</div>{/*TODO colour display*/}
+			<div className='calculated-label'>%ABV: { Number(this.props.recipe.abv).toFixed(2) }</div>
+
 			<div className='volume'>
 				<label for='volume'>Volume (L): </label>
 				<input className='volume' 
 						onChange={ this.onVolumeChange.bind(this) }
 						defaultValue={ String(this.props.recipe.batchSize) } />
 			</div>
-			<div className='efficiency'>
+			<div className='efficiency label'>
 				<label for='efficiency'>Efficiency %: </label>
 				<input className='efficiency'
 						onChange={ this.onEfficiencyChange.bind(this) }
 						defaultValue={ String(this.props.recipe.mashEfficiency) } />
 			</div>
-			<br />
-			Fermentables:
+			<p className='label'>Fermentables:</p>
 			{
 				this.props.recipe.fermentables.map((value: Brauhaus.Fermentable, index: number) => {
 					return <MashIngredientField key={value.id}
@@ -128,9 +126,8 @@ export class Mash extends React.Component<MashProps, MashState>{
 				})
 			}
 			<button className='add-ingredient-btn' onClick={this.addIngredientField.bind(this)}>Add Ingredient</button>
-
-			<hr />
 			
+			<hr />
 		</div>;
 	}
 };

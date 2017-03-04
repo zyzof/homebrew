@@ -1,0 +1,140 @@
+// 1/4 width on Desktop and adjust appropriately based on device size
+@mixin one-quarter {
+  @include media($small-screen) {
+    @include span-columns(2);
+    @include omega(1n);
+  }
+  @include media($medium-screen) {
+    @include span-columns(2);
+    @include omega(2n);
+  }
+  @include media($large-screen) {
+    @include span-columns(2);
+    @include omega(4n);
+  }
+  @include media($xl-screen) {
+      @include span-columns(3);
+      @include omega(4n);
+  }
+}
+
+// 1/4 width on Desktop - no omegas - useful for mixing with other mixins such as one quarter + three quarter
+@mixin one-quarter-nom { 
+  @include media($small-screen) {
+    @include span-columns(2);
+  }
+  @include media($medium-screen) {
+    @include span-columns(2);
+  }
+  @include media($large-screen) {
+    @include span-columns(2);
+  }
+  @include media($xl-screen) {
+    @include span-columns(3);
+  }
+}
+
+// 1/3 width on Desktop
+@mixin one-third {
+  @include media($small-screen) {
+    @include span-columns(2);
+    @include omega(1n);
+  }
+  @include media($medium-screen) {
+    @include span-columns(4);
+    @include omega(1n);
+  } 
+  @include media($large-screen) {
+    @include span-columns(2.66);
+    @include omega(3n);
+  }
+  @include media($xl-screen) {
+    @include span-columns(4);
+    @include omega(3n);
+  }
+}
+
+// 1/3 width on Desktop - no omega
+@mixin one-third-nom { 
+  @include media($small-screen) {
+    @include span-columns(2);
+  }
+  @include media($medium-screen) {
+    @include span-columns(4);
+  }
+  @include media($large-screen) {
+    @include span-columns(2.66);
+  }
+  @include media($xl-screen) {
+    @include span-columns(4);
+  }
+}
+
+// 2/3 on Desktop - no omega
+@mixin two-thirds-nom { 
+  @include media($small-screen) {
+    @include span-columns(2);
+  }
+  @include media($medium-screen) {
+    @include span-columns(4);
+  }
+  @include media($large-screen) {
+    @include span-columns(5.33);
+  }
+  @include media($xl-screen) {
+    @include span-columns(8);
+  }
+}
+
+// 1/2 on Desktop
+@mixin one-half {
+  @include media($small-screen) {
+    @include span-columns(2);
+    @include omega(1n);
+  }
+  @include media($medium-screen) {
+    @include span-columns(4);
+    @include omega(1n);
+  }
+  @include media($large-screen) {
+    @include span-columns(4);
+    @include omega(2n);
+  }
+  @include media($xl-screen) {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+}
+
+
+// 1/2 on Desktop - no omega
+@mixin one-half-nom {
+  @include media($small-screen) {
+    @include span-columns(2);
+  }
+  @include media($medium-screen) {
+    @include span-columns(4);
+  }
+  @include media($large-screen) {
+    @include span-columns(4);
+  }
+  @include media($xl-screen) {
+    @include span-columns(6);
+  }
+}
+
+// 100% width
+@mixin full-span {
+  @include media($small-screen) {
+    @include span-columns(2);
+  }
+  @include media($medium-screen) {
+    @include span-columns(4);
+  }
+  @include media($large-screen) {
+    @include span-columns(8);
+  }
+  @include media($xl-screen) {
+    @include span-columns(12);
+  }
+}

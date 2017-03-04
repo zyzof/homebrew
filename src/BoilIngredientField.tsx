@@ -51,15 +51,15 @@ export class BoilIngredientField extends React.Component<Props, State> {
 
 	public render(): JSX.Element {
 		return <div>
-				<label for='alpha'>Alpha: </label>
+				<label for='alpha' className='label'>Alpha: </label>
 				<input className='alpha' defaultValue={ String(this.props.alpha) } 
 						onChange={this.onAlphaChange.bind(this)} />
 
-				<label for='weight'>Weight: </label>
+				<label for='weight' className='label'>Weight: </label>
 				<input className='weight' defaultValue={ String(this.props.weightG) } 
 						onChange={this.onWeightChange.bind(this)} />
 
-				<label for='duration'>Duration: </label>
+				<label for='duration' className='label'>Duration: </label>
 				<input className='duration' defaultValue={ String(this.props.durationM) } 
 						onChange={this.onDurationChange.bind(this)} />
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as Brauhaus from 'brauhaus-ts';
-import { AbvCalculator } from './AbvCalculator';
-import { TempIncrementCalculator } from './TempIncrementCalculator';
-import { StrikeTempCalculator } from './StrikeTempCalculator';
-import { TempAdjustedGravityCalculator } from './TempAdjustedGravityCalculator';
+import { AbvCalculator } from './calculators/AbvCalculator';
+import { TempIncrementCalculator } from './calculators/TempIncrementCalculator';
+import { StrikeTempCalculator } from './calculators/StrikeTempCalculator';
+import { TempAdjustedGravityCalculator } from './calculators/TempAdjustedGravityCalculator';
 
 interface Props {
 
@@ -34,10 +34,13 @@ export class Calculators extends React.Component<Props, State> {
 	}
 
 	public render(): JSX.Element {
-		return <div>
+		return <div className='panel-container'>
 			<AbvCalculator />
+			<hr />
 			<StrikeTempCalculator />
+			<hr />
 			<TempIncrementCalculator />
+			<hr />
 			<TempAdjustedGravityCalculator />
 
 		</div>;

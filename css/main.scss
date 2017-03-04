@@ -1,0 +1,139 @@
+/*
+TODO: 
+
+calculated label styling
+
+input label styling
+
+input field styling
+
+heading text styling
+
+button styling
+*/
+
+@import 'neat';
+@import 'grid-settings';
+@import 'grid-mixins';
+@import 'mixins';
+
+
+#example {	/* Main element from index.html */
+	position: relative;
+	display: block;
+	margin: auto;
+}
+
+$menu-header-line-height: 75px;
+
+h1
+{
+	@include vertical-center();
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 32px;
+	left: 90px;
+	margin: 0px;
+	overflow: hidden;
+}
+
+h2
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+p
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+}
+
+label
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+}
+
+input {
+	width: 3em;
+}
+
+.calculated-panel
+{
+
+}
+
+.calculated-label
+{
+	//@include one-quarter;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.label-field
+{
+
+}
+
+/*.label
+{
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}*/
+
+.panel-container
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #f8f8f8;
+	max-width: 600px;
+}
+
+/* Mash screen styles TODO: more generic UI styling (i.e. not panel-specific); */
+.og {
+	float: left;
+}
+
+.srm {
+	float: right;
+}
+
+.fg {
+	float: left;
+}
+
+.expected-abv {
+	float: left;
+}
+
+.menu {
+	background: #f8f8f8;
+	width: 100%;
+	max-width: 600px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	margin: auto;
+}
+
+.menu-item-header {
+	/*cursor: pointer;
+	transition: 0.5s transform ease;
+	-webkit-transition: -webkit-transform 0.5s ease;*/
+	background: linear-gradient(to bottom, rgba(120, 120, 120, 1), rgba(200, 200, 200, 1));
+	height: $menu-header-line-height;
+	overflow: hidden;
+	display: block;
+	position: relative;
+	padding: 10px;
+}
+
+.menu-icon {
+	height: 100%;
+	min-width: 10%;
+	float: left;
+}
