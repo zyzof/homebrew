@@ -37,12 +37,12 @@ export class AbvCalculator extends React.Component<Props, State> {
 			<h2>ABV Estimation</h2>
 
 			<div className="panel">
-				<div className='one-half'>
+				<div className='one-quarter'>
 					<label for='calc-og' className='label'>OG: </label>
 					<input className='calc-og' onChange={this.onOgChange.bind(this)} />
 				</div>
 
-				<div className='one-half'>
+				<div className='one-quarter'>
 					<label for='calc-fg' className='label'>FG: </label>
 					<input className='calc-fg' onChange={this.onFgChange.bind(this)}/>
 				</div>
@@ -52,7 +52,7 @@ export class AbvCalculator extends React.Component<Props, State> {
 				<p className='label'>ABV: { abvStr }%</p>
 			</div>
 
-			<hr />
+			<hr className="full-span" />
 		</div>;
 	}
 }

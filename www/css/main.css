@@ -2,15 +2,19 @@
 /*
 TODO: 
 
-calculated label styling
+header section dimensions for mobile/small screen
 
-input label styling
+text styling for mobile
 
-input field styling
+fermentables & hops panel
+	remove "Add Ingredient" button and have an empty entry at bottom of recipe?
 
-heading text styling
+"add" & "remove" button styling
 
-button styling
+srm colour display
+
+malt selector sections
+
 */
 html {
   box-sizing: border-box; }
@@ -49,12 +53,25 @@ label {
   font-size: 18px; }
 
 input {
-  width: 3em; }
+  width: 3em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; }
+
+select {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; }
+
+button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; }
 
 .calculated-label {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: bold; }
+
+.right-align {
+  float: right; }
 
 @media screen and (max-width: 400px) and (—: 1px) {
   .one-half {

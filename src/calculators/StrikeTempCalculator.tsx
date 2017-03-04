@@ -69,7 +69,7 @@ export class StrikeTempCalculator extends React.Component<Props, State> {
 				<p className='label'>Strike at: { strikeTempStr }&deg;C </p>
 			</div>
 
-			<hr />
+			<hr className='full-span' />
 		</div>;
 	}
 }
