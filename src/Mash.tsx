@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 
 import * as Brauhaus from 'brauhaus-ts';
 import { MashIngredientField } from './MashIngredientField';
+import { Utils } from './utils';
 
 class FermentableFromDataFile {
 	public name: string;
@@ -130,13 +131,13 @@ export class Mash extends React.Component<MashProps, MashState>{
 			
 			<div className='panel'>
 				<div className='calculated-label one-third'>
-					OG: { Number(this.props.recipe.og).toFixed(3) }
+					OG: { Utils.formatNumberForDisplay(this.props.recipe.og, 3) }
 				</div>
 				<div className='calculated-label one-third'>
-					SRM: { Number(this.props.recipe.color).toFixed(1) }
+					SRM: { Utils.formatNumberForDisplay(this.props.recipe.color, 1) }
 				</div>{/*TODO colour display*/}
 				<div className='calculated-label one-third'>
-					ABV: { Number(this.props.recipe.abv).toFixed(1) }%
+					ABV: { Utils.formatNumberForDisplay(this.props.recipe.abv, 1) }%
 				</div>
 			</div>
 

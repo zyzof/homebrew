@@ -41,6 +41,12 @@ export class App extends React.Component<AppProps, AppState> {
 		};
 		this.state.recipe.add('yeast', { attenuation: 75 });	// Required for ABV calc. TODO allow user-specified fg
 		this.state.recipe.ibuMethod = 'tinseth';	// Required for ibu calc
+
+
+		this.state.recipe.batchSize = this.state.recipe.batchSize || 23;
+		this.state.recipe.boilSize = this.state.recipe.boilSize || 20;
+		this.state.recipe.mashEfficiency = this.state.recipe.mashEfficiency || 75;
+		this.state.recipe.steepEfficiency = this.state.recipe.steepEfficiency || 75;
 	}
 
 	private loadMostRecent(): Brauhaus.Recipe {
