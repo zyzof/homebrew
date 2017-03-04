@@ -38,9 +38,7 @@ export class Calculators extends React.Component<Props, State> {
 			<AbvCalculator />
 			<StrikeTempCalculator />
 			<TempIncrementCalculator />
-			<hr />
 			<TempAdjustedGravityCalculator />
-
 		</div>;
 	}
 }

@@ -66,6 +66,8 @@ export class TempIncrementCalculator extends React.Component<Props, State> {
 			<div className='calculated-label full-span'>
 				<p className='label'>Add { boilingWaterVol }L boiling water </p>
 			</div>
+			
+			<hr />
 		</div>;
 	}
 }

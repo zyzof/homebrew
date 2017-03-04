@@ -52,6 +52,8 @@ export class TempAdjustedGravityCalculator extends React.Component<Props, State>
 			<div className='calculated-label full-span'>
 				<p className='label'>Room Temperature Gravity: { adjustedGravityStr } </p>
 			</div>
+
+			<hr />
 		</div>;
 	}
 }
