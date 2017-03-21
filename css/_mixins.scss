@@ -4,3 +4,10 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+@mixin text($size, $weight: normal)
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: $size;
+	font-weight: $weight;
+}

@@ -3,7 +3,25 @@ TODO:
 
 header section dimensions for mobile/small screen
 
+	.menu, medium->large media query:
+		max-width: 66vw;
+	.menu, small media query
+		max-width: 100%/100vw;
+
+	icon sizing: 
+		absolute position, fit parent height and match width
+
+	text sizing:
+		up to ~20px vertical padding
+		no padding when header is vertically small
+		offset from icon position (+~20px)
+
+
 text styling for mobile
+
+input field alignment within grid
+	make input field take up remainder of space?
+	max width?
 
 fermentables & hops panel
 	remove "Add Ingredient" button and have an empty entry at bottom of recipe?
@@ -28,14 +46,10 @@ malt selector sections
 	margin: auto;
 }
 
-$menu-header-line-height: 75px;
-
 h1
 {
 	@include vertical-center();
-	font-family: 'Roboto', sans-serif;
-	font-weight: bold;
-	font-size: 32px;
+	@include text(32px, bold);
 	left: 90px;
 	margin: 0px;
 	overflow: hidden;
@@ -43,39 +57,32 @@ h1
 
 h2
 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 24px;
-	font-weight: bold;
+	@include text(24px, bold);
 }
 
 p
 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
+	@include text(18px);
 }
 
 label
 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
+	@include text(18px);
 }
 
 input {
 	width: 3em;
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
+	@include text(18px);
 }
 
 select
 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;	
+	@include text(18px);
 }
 
 button
 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;		
+	@include text(18px);
 }
 
 .panel
@@ -148,16 +155,44 @@ button
 	margin: auto;
 }
 
+$large-header-height: 75px;
+$mobile-header-height: 150px;
+
 .menu-item-header {
-	/*cursor: pointer;
-	transition: 0.5s transform ease;
-	-webkit-transition: -webkit-transform 0.5s ease;*/
+	@include media($small-screen)
+	{
+
+	}
+
+	@include media(-webkit-min-device-pixel-ratio: 2 and min-resolution: 192dpi)
+	{
+		height: $mobile-header-height;
+	}
+
+	@include media($medium-screen)
+	{
+		height: $large-header-height;
+	}
+
+	@include media($large-screen)
+	{
+		height: $large-header-height;
+	}
+
+	@include media($xl-screen)
+	{
+		height: $large-header-height;
+	}
+
 	background: linear-gradient(to bottom, rgba(120, 120, 120, 1), rgba(200, 200, 200, 1));
-	height: $menu-header-line-height;
+	
 	overflow: hidden;
 	display: block;
 	position: relative;
 	padding: 10px;
+
+	height: 30vh;
+	max-height: 500px;
 }
 
 .menu-icon {
