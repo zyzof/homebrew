@@ -24,8 +24,6 @@ export interface AppState {
 	activePanels: ActivePanelsBitMask;
 };
 
-interface Recipe { og: number };
-
 export class App extends React.Component<AppProps, AppState> {
 
 	constructor(props: AppProps) {

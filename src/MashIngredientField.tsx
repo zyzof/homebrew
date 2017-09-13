@@ -35,19 +35,25 @@ export class MashIngredientField extends React.Component<Props, State> {
 	}
 
 	public render(): JSX.Element {
-		return <div>
-			<select onChange={this.onMaltChange.bind(this)} 
-					value={this.props.name}>
-				{
-					this.props.options.map((value: string, index: number) => {
-						return <option key={index}>{value}</option>;
-					})
-				}
-			</select>
-			<input onChange={this.onQuantityChange.bind(this)}
-					defaultValue={ String(this.props.quantity) } />
-					
-			<button onClick={this.props.onRemove.bind(this)}>X</button>
+		return <div className='row mash-ingredient-row'>
+			<div className="col-8 fermentable-select">
+				<select onChange={this.onMaltChange.bind(this)} 
+						value={this.props.name}>
+					{
+						this.props.options.map((value: string, index: number) => {
+							return <option key={index}>{value}</option>;
+						})
+					}
+				</select>
+			</div>
+			<div className="col-2 no-side-padding">
+				<input className='quantity-input' onChange={this.onQuantityChange.bind(this)}
+						defaultValue={ String(this.props.quantity) } />
+			</div>
+
+			<div className="col-2 remove-ingredient-btn">
+				<button onClick={this.props.onRemove.bind(this)}>X</button>
+			</div>
 
 		</div>;
 	}

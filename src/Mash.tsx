@@ -41,6 +41,7 @@ export class Mash extends React.Component<MashProps, MashState>{
 
 	private loadFermentables(): void {
 		let self = this;
+		// TODO bundle fermentables.json and avoid GET request
 		let json: any = $.getJSON('./fermentables.json', (values: FermentableFromDataFile[]) => {
 			for (let fermentable of values) {
 				this.state.fermentableOptions.push(fermentable.name);
@@ -96,17 +97,17 @@ export class Mash extends React.Component<MashProps, MashState>{
 		console.log('Recipe fermentables: ');
 		console.log(this.props.recipe.fermentables);
 
-		return <div className='panel-container'>
+		return <div className='container'>
 			<hr />
 
-			<div className='panel'>
-				<div className='one-half'>
+			<div className='row bottom-pad'>
+				<div className='col-6'>
 					<label for='volume'>Volume (L): </label>
 					<input className='volume' 
 							onChange={ this.onVolumeChange.bind(this) }
 							defaultValue={ String(this.props.recipe.batchSize) } />
 				</div>
-				<div className='one-half'>
+				<div className='col-6 right-align'>
 					<label for='efficiency'>Efficiency %: </label>
 					<input className='efficiency'
 							onChange={ this.onEfficiencyChange.bind(this) }
@@ -114,8 +115,10 @@ export class Mash extends React.Component<MashProps, MashState>{
 				</div>
 			</div>
 
-			<div>
-				<label className='label'>Fermentables:</label>
+			<div className='row bottom-pad'>
+				<div className='col-12 sm-bottom-pad'>
+					<label>Fermentables:</label>
+				</div>
 				{
 					this.props.recipe.fermentables.map((value: Brauhaus.Fermentable, index: number) => {
 						return <MashIngredientField key={value.id}
@@ -126,17 +129,19 @@ export class Mash extends React.Component<MashProps, MashState>{
 								onRemove={this.removeFermentableAtIndex.bind(this, index)} />;
 					})
 				}
-				<button className='add-ingredient-btn' onClick={this.addIngredientField.bind(this)}>Add Ingredient</button>
+				<div className='add-btn'>
+					<button onClick={this.addIngredientField.bind(this)}>Add Ingredient</button>
+				</div>
 			</div>
 			
-			<div className='panel'>
-				<div className='calculated-label one-third'>
+			<div className='row'>
+				<div className='calculated-label col-4 left-align'>
 					OG: { Utils.formatNumberForDisplay(this.props.recipe.og, 3) }
 				</div>
-				<div className='calculated-label one-third'>
+				<div className='calculated-label col-4 center-align'>
 					SRM: { Utils.formatNumberForDisplay(this.props.recipe.color, 1) }
 				</div>{/*TODO colour display*/}
-				<div className='calculated-label one-third'>
+				<div className='calculated-label col-4 right-align'>
 					ABV: { Utils.formatNumberForDisplay(this.props.recipe.abv, 1) }%
 				</div>
 			</div>

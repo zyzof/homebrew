@@ -1,0 +1,30 @@
+.add-btn {
+	padding-left: 15px;
+	padding-top: 15px;
+}
+
+.row .mash-ingredient-row {
+	margin: 0;
+
+	.fermentable-select {
+		padding-right: 0;
+
+		select {
+			box-sizing: border-box;
+			width: 100%;
+		}
+	}
+
+	.quantity-input {
+		box-sizing: border-box;
+		width: 100%;
+	}
+	
+	.remove-ingredient-btn {
+	
+		button {
+			width: 100%;
+		}
+		padding-left: 0 !important;
+	}
+}

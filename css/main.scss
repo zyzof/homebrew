@@ -1,30 +1,11 @@
 /*
-TODO: 
+TODO:
 
-header section dimensions for mobile/small screen
-
-	.menu, medium->large media query:
-		max-width: 66vw;
-	.menu, small media query
-		max-width: 100%/100vw;
-
-	icon sizing: 
-		absolute position, fit parent height and match width
-
-	text sizing:
-		up to ~20px vertical padding
-		no padding when header is vertically small
-		offset from icon position (+~20px)
-
-
-text styling for mobile
-
-input field alignment within grid
-	make input field take up remainder of space?
-	max width?
+ingredient input row cell padding - 0 on mobile, <50px otherwise
 
 fermentables & hops panel
 	remove "Add Ingredient" button and have an empty entry at bottom of recipe?
+	Don't wrap ingredient row items
 
 "add" & "remove" button styling
 
@@ -32,15 +13,20 @@ srm colour display
 
 malt selector sections
 
+hide vertical scrollbar
+
+css transform color instead of separate on/off buttonstate icons
+
 */
 
-@import 'neat';
-@import 'grid-settings';
-@import 'grid-mixins';
 @import 'mixins';
+@import 'mash';
 
+body {
+	margin: 8px 0 0 0;
+}
 
-#example {	/* Main element from index.html */
+#main {
 	position: relative;
 	display: block;
 	margin: auto;
@@ -58,6 +44,11 @@ h1
 h2
 {
 	@include text(24px, bold);
+}
+
+h3
+{
+	@include text(18px, bold);
 }
 
 p
@@ -85,51 +76,14 @@ button
 	@include text(18px);
 }
 
-.panel
-{
-	//@include one-third;
-}
-
 .calculated-label
 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
-	font-weight: bold;
-}
-
-.input-panel
-{
-
-}
-
-.label-field
-{
-
+	@include text(18px, bold);
 }
 
 .right-align
 {
 	float: right;
-}
-
-.one-half
-{
-	@include one-half;
-}
-
-.one-third
-{
-	@include one-third;
-}
-
-.one-quarter
-{
-	@include one-quarter;
-}
-
-.full-span
-{
-	@include full-span;
 }
 
 .panel-container
@@ -138,11 +92,6 @@ button
 	padding-right: 10px;
 	background-color: #f8f8f8;
 	max-width: 600px;
-}
-
-.outer-container
-{
-	@include outer-container;
 }
 
 .menu {
@@ -155,43 +104,14 @@ button
 	margin: auto;
 }
 
-$large-header-height: 75px;
-$mobile-header-height: 150px;
-
 .menu-item-header {
-	@include media($small-screen)
-	{
-
-	}
-
-	@include media(-webkit-min-device-pixel-ratio: 2 and min-resolution: 192dpi)
-	{
-		height: $mobile-header-height;
-	}
-
-	@include media($medium-screen)
-	{
-		height: $large-header-height;
-	}
-
-	@include media($large-screen)
-	{
-		height: $large-header-height;
-	}
-
-	@include media($xl-screen)
-	{
-		height: $large-header-height;
-	}
+	height: 75px;
 
 	background: linear-gradient(to bottom, rgba(120, 120, 120, 1), rgba(200, 200, 200, 1));
-	
 	overflow: hidden;
 	display: block;
 	position: relative;
 	padding: 10px;
-
-	height: 30vh;
 	max-height: 500px;
 }
 
@@ -200,3 +120,41 @@ $mobile-header-height: 150px;
 	min-width: 10%;
 	float: left;
 }
+
+.left-align {
+	text-align: left;
+}
+
+.center-align {
+	text-align: center;
+}
+
+.right-align {
+	text-align: right;
+}
+
+.bottom-pad {
+	padding-bottom: 25px;
+}
+
+.sm-bottom-pad {
+	padding-bottom: 10px;
+}
+
+.no-margin {
+	margin: 0 !important;
+}
+
+.no-left-padding {
+	padding-left: 0 !important;
+}
+
+.no-right-padding {
+	padding-right: 0 !important;
+}
+
+.no-side-padding {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
