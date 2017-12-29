@@ -89,6 +89,11 @@ export class Boil extends React.Component<Props, State>{
 			{/* TODO allow OG override here? */}
 			<div className='panel'>
 				<label className='label'>Hops: </label>
+				<div className='row boil-ingredient-row'>
+					<label className='col-3'>Alpha: </label>
+					<label className='col-3'>Weight: </label>
+					<label className='col-3'>Duration: </label>
+				</div>
 				{
 					this.props.recipe.spices.map((value: Brauhaus.Spice, index: number, array: Brauhaus.Spice[]) => {
 						return <BoilIngredientField
@@ -100,7 +105,9 @@ export class Boil extends React.Component<Props, State>{
 								onRemove={this.removeHopAtIndex.bind(this, index)} />;
 					})
 				}
-				<button className='add-ingredient-btn' onClick={this.addIngredientField.bind(this)}>Add Ingredient</button>
+				<div className='add-btn'>
+					<button onClick={this.addIngredientField.bind(this)}>Add Ingredient</button>
+				</div>
 			</div>
 
 			<div className='calculated-label'>IBU: { Number(this.props.recipe.ibu).toFixed(0) }</div>

@@ -1,31 +1,11 @@
-@charset "UTF-8";
 /*
-TODO: 
+TODO:
 
-header section dimensions for mobile/small screen
-
-	.menu, medium->large media query:
-		max-width: 66vw;
-	.menu, small media query
-		max-width: 100%/100vw;
-
-	icon sizing: 
-		absolute position, fit parent height and match width
-
-	text sizing:
-		up to ~20px vertical padding
-		no padding when header is vertically small
-		offset from icon position (+~20px)
-
-
-text styling for mobile
-
-input field alignment within grid
-	make input field take up remainder of space?
-	max width?
+ingredient input row cell padding - 0 on mobile, <50px otherwise
 
 fermentables & hops panel
 	remove "Add Ingredient" button and have an empty entry at bottom of recipe?
+	Don't wrap ingredient row items
 
 "add" & "remove" button styling
 
@@ -33,15 +13,44 @@ srm colour display
 
 malt selector sections
 
+hide vertical scrollbar
+
+css transform color instead of separate on/off buttonstate icons
+
 */
-html {
-  box-sizing: border-box; }
+.add-btn {
+  padding-left: 15px;
+  padding-top: 15px; }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
+.mash-ingredient-row {
+  margin: 0; }
+  .mash-ingredient-row .quantity-input {
+    box-sizing: border-box;
+    width: 100%; }
+  .mash-ingredient-row .fermentable-select {
+    padding-right: 0; }
+    .mash-ingredient-row .fermentable-select select {
+      box-sizing: border-box;
+      width: 100%; }
 
-#example {
-  /* Main element from index.html */
+.boil-ingredient-row .quantity-input {
+  width: 50px; }
+
+.remove-ingredient-btn {
+  padding-left: 0 !important; }
+  .remove-ingredient-btn button {
+    width: 100%; }
+
+.add-ingredient-button {
+  float: left; }
+
+.boil-ingredient-row {
+  display: inline-block; }
+
+body {
+  margin: 8px 0 0 0; }
+
+#main {
   position: relative;
   display: block;
   margin: auto; }
@@ -60,6 +69,11 @@ h1 {
 h2 {
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
+  font-weight: bold; }
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
   font-weight: bold; }
 
 p {
@@ -96,212 +110,11 @@ button {
 .right-align {
   float: right; }
 
-@media screen and (max-width: 400px) and (—: 1px) {
-  .one-half {
-    float: left;
-    display: block;
-    margin-right: 16.03631%;
-    width: 100%; }
-    .one-half:last-child {
-      margin-right: 0; }
-    .one-half:nth-child(1n) {
-      margin-right: 0; }
-    .one-half:nth-child(1n+1) {
-      clear: left; } }
-
-@media screen and (min-width: 400px) and (max-width: 834px) {
-  .one-half {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 100%; }
-    .one-half:last-child {
-      margin-right: 0; }
-    .one-half:nth-child(1n) {
-      margin-right: 0; }
-    .one-half:nth-child(1n+1) {
-      clear: left; } }
-
-@media screen and (min-width: 835px) and (max-width: 1099px) {
-  .one-half {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 48.21067%; }
-    .one-half:last-child {
-      margin-right: 0; }
-    .one-half:nth-child(2n) {
-      margin-right: 0; }
-    .one-half:nth-child(2n+1) {
-      clear: left; } }
-
-@media screen and (min-width: 1100px) {
-  .one-half {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%; }
-    .one-half:last-child {
-      margin-right: 0; }
-    .one-half:nth-child(2n) {
-      margin-right: 0; }
-    .one-half:nth-child(2n+1) {
-      clear: left; } }
-
-@media screen and (max-width: 400px) and (—: 1px) {
-  .one-third {
-    float: left;
-    display: block;
-    margin-right: 16.03631%;
-    width: 100%; }
-    .one-third:last-child {
-      margin-right: 0; }
-    .one-third:nth-child(1n) {
-      margin-right: 0; }
-    .one-third:nth-child(1n+1) {
-      clear: left; } }
-
-@media screen and (min-width: 400px) and (max-width: 834px) {
-  .one-third {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 100%; }
-    .one-third:last-child {
-      margin-right: 0; }
-    .one-third:nth-child(1n) {
-      margin-right: 0; }
-    .one-third:nth-child(1n+1) {
-      clear: left; } }
-
-@media screen and (min-width: 835px) and (max-width: 1099px) {
-  .one-third {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 30.86124%; }
-    .one-third:last-child {
-      margin-right: 0; }
-    .one-third:nth-child(3n) {
-      margin-right: 0; }
-    .one-third:nth-child(3n+1) {
-      clear: left; } }
-
-@media screen and (min-width: 1100px) {
-  .one-third {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
-    .one-third:last-child {
-      margin-right: 0; }
-    .one-third:nth-child(3n) {
-      margin-right: 0; }
-    .one-third:nth-child(3n+1) {
-      clear: left; } }
-
-@media screen and (max-width: 400px) and (—: 1px) {
-  .one-quarter {
-    float: left;
-    display: block;
-    margin-right: 16.03631%;
-    width: 100%; }
-    .one-quarter:last-child {
-      margin-right: 0; }
-    .one-quarter:nth-child(1n) {
-      margin-right: 0; }
-    .one-quarter:nth-child(1n+1) {
-      clear: left; } }
-
-@media screen and (min-width: 400px) and (max-width: 834px) {
-  .one-quarter {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 46.28851%; }
-    .one-quarter:last-child {
-      margin-right: 0; }
-    .one-quarter:nth-child(2n) {
-      margin-right: 0; }
-    .one-quarter:nth-child(2n+1) {
-      clear: left; } }
-
-@media screen and (min-width: 835px) and (max-width: 1099px) {
-  .one-quarter {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 22.316%; }
-    .one-quarter:last-child {
-      margin-right: 0; }
-    .one-quarter:nth-child(4n) {
-      margin-right: 0; }
-    .one-quarter:nth-child(4n+1) {
-      clear: left; } }
-
-@media screen and (min-width: 1100px) {
-  .one-quarter {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 23.23176%; }
-    .one-quarter:last-child {
-      margin-right: 0; }
-    .one-quarter:nth-child(4n) {
-      margin-right: 0; }
-    .one-quarter:nth-child(4n+1) {
-      clear: left; } }
-
-@media screen and (max-width: 400px) and (—: 1px) {
-  .full-span {
-    float: left;
-    display: block;
-    margin-right: 16.03631%;
-    width: 100%; }
-    .full-span:last-child {
-      margin-right: 0; } }
-
-@media screen and (min-width: 400px) and (max-width: 834px) {
-  .full-span {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 100%; }
-    .full-span:last-child {
-      margin-right: 0; } }
-
-@media screen and (min-width: 835px) and (max-width: 1099px) {
-  .full-span {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 100%; }
-    .full-span:last-child {
-      margin-right: 0; } }
-
-@media screen and (min-width: 1100px) {
-  .full-span {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%; }
-    .full-span:last-child {
-      margin-right: 0; } }
-
 .panel-container {
   padding-left: 10px;
   padding-right: 10px;
   background-color: #f8f8f8;
   max-width: 600px; }
-
-.outer-container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto; }
-  .outer-container::after {
-    clear: both;
-    content: "";
-    display: block; }
 
 .menu {
   background: #f8f8f8;
@@ -313,24 +126,43 @@ button {
   margin: auto; }
 
 .menu-item-header {
+  height: 75px;
   background: linear-gradient(to bottom, #787878, #c8c8c8);
   overflow: hidden;
   display: block;
   position: relative;
   padding: 10px;
-  height: 30vh;
   max-height: 500px; }
-  @media screen and (min-width: 400px) and (max-width: 834px) {
-    .menu-item-header {
-      height: 75px; } }
-  @media screen and (min-width: 835px) and (max-width: 1099px) {
-    .menu-item-header {
-      height: 75px; } }
-  @media screen and (min-width: 1100px) {
-    .menu-item-header {
-      height: 75px; } }
 
 .menu-icon {
   height: 100%;
   min-width: 10%;
   float: left; }
+
+.left-align {
+  text-align: left; }
+
+.center-align {
+  text-align: center; }
+
+.right-align {
+  text-align: right; }
+
+.bottom-pad {
+  padding-bottom: 25px; }
+
+.sm-bottom-pad {
+  padding-bottom: 10px; }
+
+.no-margin {
+  margin: 0 !important; }
+
+.no-left-padding {
+  padding-left: 0 !important; }
+
+.no-right-padding {
+  padding-right: 0 !important; }
+
+.no-side-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }

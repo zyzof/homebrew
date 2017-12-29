@@ -50,20 +50,24 @@ export class BoilIngredientField extends React.Component<Props, State> {
 	}
 
 	public render(): JSX.Element {
-		return <div>
-				<label for='alpha' className='label'>Alpha: </label>
-				<input className='alpha' defaultValue={ String(this.props.alpha) } 
-						onChange={this.onAlphaChange.bind(this)} />
-
-				<label for='weight' className='label'>Weight: </label>
-				<input className='weight' defaultValue={ String(this.props.weightG) } 
-						onChange={this.onWeightChange.bind(this)} />
-
-				<label for='duration' className='label'>Duration: </label>
-				<input className='duration' defaultValue={ String(this.props.durationM) } 
-						onChange={this.onDurationChange.bind(this)} />
-
-				<button onClick={this.props.onRemove.bind(this)}>X</button>
+		return <div className='row boil-ingredient-row form-group form-horizontal'>
+				<div className='col-3 quantity-input form-control'>
+					<input id='alpha' defaultValue={ String(this.props.alpha) } 
+							onChange={this.onAlphaChange.bind(this)} />
+				</div>
+				<div className='col-3 quantity-input form-control'>
+					<input id='weight' defaultValue={ String(this.props.weightG) } 
+							onChange={this.onWeightChange.bind(this)} />
+				</div>
+				<div className='col-6'>
+					<div className='quantity-input form-control'>
+						<input id='duration' defaultValue={ String(this.props.durationM) } 
+								onChange={this.onDurationChange.bind(this)} />
+					</div>
+					<div className='remove-ingredient-btn'>
+						<button onClick={this.props.onRemove.bind(this)}>X</button>
+					</div>
+				</div>
 			</div>;
 	}
 }

@@ -18,12 +18,12 @@
     "babelify": "7.3.0",
     "bourbon-neat": "^1.9.0",
     "browserify": "13.0.1",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.7.2",
     "ntypescript": "1.201609060105.1",
     "uglify-js": "2.7.3"
   },
   "dependencies": {
-    "brauhaus-ts": "github:zyzof/brauhaus-ts",
+    "brauhaus-ts": "file:../brauhaus-ts",
     "jquery": "^3.2.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"

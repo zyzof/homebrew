@@ -3,8 +3,13 @@
 	padding-top: 15px;
 }
 
-.row .mash-ingredient-row {
+.mash-ingredient-row {
 	margin: 0;
+
+	.quantity-input {
+		box-sizing: border-box;
+		width: 100%;
+	}
 
 	.fermentable-select {
 		padding-right: 0;
@@ -14,17 +19,18 @@
 			width: 100%;
 		}
 	}
+}
 
+.boil-ingredient-row {
 	.quantity-input {
-		box-sizing: border-box;
+		width: 50px;
+	}
+}
+
+.remove-ingredient-btn {
+	
+	button {
 		width: 100%;
 	}
-	
-	.remove-ingredient-btn {
-	
-		button {
-			width: 100%;
-		}
-		padding-left: 0 !important;
-	}
+	padding-left: 0 !important;
 }
